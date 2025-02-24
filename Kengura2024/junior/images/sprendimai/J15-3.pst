@@ -1,0 +1,27 @@
+{\psset{unit=3mm}\psset{linejoin=1,linecap=1,linewidth=0.7pt}
+\pspicture(0,-1.2)(11,9.5263)
+%\psframe(0,-1.2)(11,9.5263)
+
+\pspolygon[fillstyle=solid,fillcolor=black!10](!5 3 3 sqrt mul)(!8 3 3 sqrt mul)(!6.5 4.5 3 sqrt mul)
+\pspolygon[fillstyle=solid,fillcolor=black!10](2,0)(8,0)(!5 3 3 sqrt mul)
+
+\pspolygon(0,0)(11,0)(!5.5 5.5 3 sqrt mul)
+\psline(2,0)(!6.5 4.5 3 sqrt mul)
+\psline(!8 3 3 sqrt mul)(!3 3 3 sqrt mul)
+\psline(!5 3 3 sqrt mul)(!8 0)
+
+%\uput[90](!5.5 5.5 3 sqrt mul){$A$}
+%\uput[210](0,0){$B$}
+%\uput[330](11,0){$C$}
+%\uput[0](!5 3 3 sqrt mul){$P$}
+
+\uput{0.2}[150](!5.75 3.75 3 sqrt mul){$3$}
+\uput{0.2}[270](!4 3 3 sqrt mul){$2$}
+\uput{0.2}[30](!6.5 1.5 3 sqrt mul){$6$}
+
+\uput{0.2}[270](1,0){$2$}
+\uput{0.2}[270](5,0){$6$}
+\uput{0.2}[270](9.5,0){$3$}
+\uput{0.2}[270](!6.5 3 3 sqrt mul){$3$}
+
+\endpspicture}

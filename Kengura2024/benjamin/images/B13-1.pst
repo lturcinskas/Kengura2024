@@ -1,0 +1,13 @@
+{\psset{unit=1.7mm}\psset{linejoin=0,linewidth=1pt}
+\pspicture(0,0)(45,30)
+
+\def\boxA{\pspolygon[fillstyle=solid,fillcolor=black!20](0,0)(9,0)(9,4)(0,4)}%
+\def\boxB{\pspolygon[fillstyle=solid,fillcolor=black!20](0,0)(4,0)(4,9)(0,9)}%
+
+\multido{\n=0+9}{5}{\rput(\n,0){\boxA}}
+\multido{\n=7+9}{4}{\rput(\n,4){\boxB}}
+\multido{\n=9+9}{3}{\rput(\n,13){\boxA}}
+\multido{\n=16+9}{2}{\rput(\n,17){\boxB}}
+\multido{\n=18+9}{1}{\rput(\n,26){\boxA}}
+
+\endpspicture}

@@ -1,0 +1,18 @@
+{\psset{unit=8mm}\psset{linejoin=1,linewidth=0.7pt}
+\pspicture(0,0)(3,3)
+
+\pspolygon(0,0)(3,0)(3,3)(0,3)%
+\psline[linewidth=0.5pt](0,1)(3,1)
+\psline[linewidth=0.5pt](0,2)(3,2)
+\psline[linewidth=0.5pt](1,0)(1,3)
+\psline[linewidth=0.5pt](2,0)(2,3)
+
+\rput(0,2){\pspolygon[linewidth=0.5pt,fillstyle=solid,fillcolor=green!80!black](0,0)(1,0)(1,1)(0,1)}
+\rput(1,2){\pspolygon[linewidth=0.5pt,fillstyle=solid,fillcolor=green!80!black](0,0)(1,0)(1,1)(0,1)}
+\rput(2,2){\pspolygon[linewidth=0.5pt,fillstyle=solid,fillcolor=green!80!black](0,0)(1,0)(1,1)(0,1)}
+\rput(0,1){\pspolygon[linewidth=0.5pt,fillstyle=solid,fillcolor=green!80!black](0,0)(1,0)(1,1)(0,1)}
+\rput(0,0){\pspolygon[linewidth=0.5pt,fillstyle=solid,fillcolor=green!80!black](0,0)(1,0)(1,1)(0,1)}
+
+\rput(0,2){\pspolygon[linewidth=0.5pt,fillstyle=solid,fillcolor=white](!1 3 div 1 3 div)(!2 3 div 1 3 div)(!2 3 div 2 3 div)(!1 3 div 2 3 div)}
+
+\endpspicture}

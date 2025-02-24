@@ -1,0 +1,10 @@
+{\psset{unit=8mm}\psset{linejoin=1,linewidth=0.7pt}
+\pspicture(-2.8,-2.8)(2.8,2.8)
+
+\pscircle(0,0){2.5}
+
+\multido{\n=0.0+22.5}{16}{%
+\pscircle[fillstyle=solid,fillcolor=black!0](2.5;\n){0.3}%
+}
+
+\endpspicture}

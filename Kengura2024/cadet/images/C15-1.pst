@@ -1,0 +1,17 @@
+{\psset{unit=4mm}\psset{linewidth=0.5pt,linejoin=1,linecap=1}
+\pspicture(-8.4,-3.45)(3.3,3.4)
+%\psframe(-8.4,-3.45)(3.3,3.4)
+
+\psset{viewpoint=100 20 17 rtp2xyz,Decran=200,object=cube,a=1,action=draw**,fillcolor=black!15}
+
+\rput(-7,0){\psSolid[fillcolor=black!45](0,0,0)}
+
+\psSolid(0,0,-1)
+\psSolid(-1,0,0)
+\psSolid(0,-1,0)
+\psSolid(0,0,0)
+\psSolid(0,1,0)
+\psSolid(1,0,0)
+\psSolid(0,0,1)
+
+\endpspicture}

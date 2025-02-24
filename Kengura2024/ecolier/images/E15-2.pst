@@ -1,0 +1,17 @@
+{\psset{unit=7mm}\psset{linejoin=1,linewidth=0.7pt}
+\pspicture(0,0)(5.4,4.7)
+%\psframe(0,0)(5.4,4.7)
+
+\rput(0.0,2){\pspolygon[fillstyle=solid,fillcolor=black!70](0,0)(1.2,0)(1.2,2)(0,2)\rput(0.6,1){\color{white}\scalebox{2}{\textbf{1}}}}
+\rput(1.2,2){\pspolygon[fillstyle=solid,fillcolor=black!70](0,0)(1.2,0)(1.2,2)(0,2)\rput(0.6,1){\color{white}\scalebox{2}{\textbf{2}}}}
+\rput(0.0,0){\pspolygon[fillstyle=solid,fillcolor=black!70](0,0)(1.2,0)(1.2,2)(0,2)\rput(0.6,1){\color{white}\scalebox{2}{\textbf{4}}}}
+\rput(1.2,0){\pspolygon[fillstyle=solid,fillcolor=black!70](0,0)(1.2,0)(1.2,2)(0,2)\rput(0.6,1){\color{white}\scalebox{2}{\textbf{3}}}}
+
+\rput(3.0,2){\pspolygon[fillstyle=solid,fillcolor=black!5](0,0)(1.2,0)(1.2,2)(0,2)\rput(0.6,1){\scalebox{2}{\textbf{6}}}}
+\rput(4.2,2){\pspolygon[fillstyle=solid,fillcolor=black!5](0,0)(1.2,0)(1.2,2)(0,2)\rput(0.6,1){\scalebox{2}{\textbf{7}}}}
+\rput(3.0,0){\pspolygon[fillstyle=solid,fillcolor=black!5](0,0)(1.2,0)(1.2,2)(0,2)\rput(0.6,1){\scalebox{2}{\textbf{8}}}}
+\rput(4.2,0){\pspolygon[fillstyle=solid,fillcolor=black!5](0,0)(1.2,0)(1.2,2)(0,2)\rput(0.6,1){\scalebox{2}{\textbf{5}}}}
+
+\psellipticarcn[linewidth=2pt,arrowscale=1.8 1.5]{->}(2.7,3.75)(1.5,0.75){150}{30}
+
+\endpspicture}

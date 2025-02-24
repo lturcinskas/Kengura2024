@@ -1,0 +1,14 @@
+{\psset{unit=4mm}\psset{linejoin=1,linewidth=0.7pt}
+\pspicture(0,0)(6,6)
+
+\rput(0,0){\pspolygon[fillstyle=solid,fillcolor=black!10](0,0)(2,0)(2,2)(0,2)}
+\rput(2,0){\pspolygon[fillstyle=solid,fillcolor=black!0](0,0)(2,0)(2,2)(0,2)}
+\rput(4,0){\pspolygon[fillstyle=solid,fillcolor=black!10](0,0)(2,0)(2,2)(0,2)}
+\rput(1,2){\pspolygon[fillstyle=solid,fillcolor=black!10](0,0)(2,0)(2,2)(0,2)}
+\rput(3,2){\pspolygon[fillstyle=solid,fillcolor=black!10](0,0)(2,0)(2,2)(0,2)}
+\rput(2,4){\pspolygon[fillstyle=solid,fillcolor=black!0](0,0)(2,0)(2,2)(0,2)}
+
+\rput(3,1){$n$}
+\rput(3,5){$720$}
+
+\endpspicture}

@@ -1,0 +1,32 @@
+{\psset{unit=8mm}\psset{linejoin=1,linewidth=0.7pt}
+\pspicture(-1,0)(3,4)
+
+\def\cube#1#2#3{\rput(!#2 #1 3 div sub #3 #1 3 div add){%
+\pspolygon[linewidth=0.5pt,fillstyle=solid,fillcolor=green!80!black](0,0)(1,0)(1,1)(0,1)%
+\pspolygon[linewidth=0.5pt,fillstyle=solid,fillcolor=green!80!black](0,1)(1,1)(!2 3 div 4 3 div)(!-1 3 div 4 3 div)%
+\pspolygon[linewidth=0.5pt,fillstyle=solid,fillcolor=green!80!black](0,0)(0,1)(!-1 3 div 4 3 div)(!-1 3 div 1 3 div)%
+}}
+
+\psline(2,1)(-1,1)
+\psline(2,1)(2,4)
+\psline(2,1)(3,0)
+
+\psline[linewidth=0.5pt](!-1 3 div 1 3 div)(!8 3 div 1 3 div)
+\psline[linewidth=0.5pt](!-2 3 div 2 3 div)(!7 3 div 2 3 div)
+\psline[linewidth=0.5pt](1,0)(0,1)
+\psline[linewidth=0.5pt](2,0)(1,1)
+
+\cube{2}{2}{0}
+\cube{2}{0}{0}
+\cube{2}{0}{1}
+\cube{2}{1}{2}
+\cube{2}{0}{2}
+\cube{1}{0}{2}
+
+\pspolygon(0,0)(3,0)(3,3)(0,3)
+\pspolygon(0,3)(3,3)(2,4)(-1,4)
+\pspolygon(0,0)(0,3)(-1,4)(-1,1)
+
+\rput(!-2 3 div 8 3 div){\pspolygon[linewidth=0.5pt,fillstyle=solid,fillcolor=white](!2 9 div 10 9 div)(!5 9 div 10 9 div)(!4 9 div 11 9 div)(!1 9 div 11 9 div)}
+
+\endpspicture}

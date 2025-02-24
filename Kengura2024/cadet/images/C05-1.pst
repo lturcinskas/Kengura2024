@@ -1,0 +1,37 @@
+{\psset{unit=5mm}\psset{linewidth=0.5pt,linejoin=1,linecap=1}
+\pspicture(-2,-1.85)(3.5,4.1)
+%\psframe(-2,-1.85)(3.5,4.1)
+
+\psset{viewpoint=100 145 35 rtp2xyz,Decran=350}
+
+\psPoint(1,0,0){A1}
+\psPoint(120 cos,120 sin,0){A2}
+\psPoint(240 cos,240 sin,0){A3}
+\psPoint(0,0,2 sqrt){A4}
+
+\pspolygon[fillstyle=solid,fillcolor=black!15](A1)(A2)(A4)
+\pspolygon[fillstyle=solid,fillcolor=black!15](A2)(A3)(A4)
+
+\psPoint(1 5 div,0,2 sqrt 5 div 4 mul){R1}
+\psPoint(120 cos 5 div,120 sin 5 div,2 sqrt 5 div 4 mul){R2}
+\psPoint(240 cos 5 div,240 sin 5 div,2 sqrt 5 div 4 mul){R3}
+
+\psPoint(1 5 div 4 mul,0,2 sqrt 5 div){S1}
+\psPoint(120 cos 5 div 4 mul,120 sin 5 div 4 mul,2 sqrt 5 div){S2}
+\psPoint(240 cos 5 div 4 mul,240 sin 5 div 4 mul,2 sqrt 5 div){S3}
+
+\psPoint(1 4 mul 120 cos add 5 div,120 sin 5 div,0){T1}
+\psPoint(1 120 cos 4 mul add 5 div,120 sin 4 mul 5 div,0){T2}
+\psPoint(120 cos 4 mul 240 cos add 5 div,120 sin 4 mul 240 sin add 5 div,0){T3}
+\psPoint(120 cos 240 cos 4 mul add 5 div,120 sin 240 sin 4 mul add 5 div,0){T4}
+
+\pspolygon[fillstyle=solid,fillcolor=black!50](R1)(R2)(A4)
+\pspolygon[fillstyle=solid,fillcolor=black!50](R2)(R3)(A4)
+\pspolygon[fillstyle=solid,fillcolor=black!50](A1)(T1)(S1)
+\pspolygon[fillstyle=solid,fillcolor=black!50](A2)(T2)(S2)
+\pspolygon[fillstyle=solid,fillcolor=black!50](A2)(T3)(S2)
+\pspolygon[fillstyle=solid,fillcolor=black!50](A3)(T4)(S3)
+
+%\psline[linestyle=dashed,dash=2pt 4pt](A1)(A3)
+
+\endpspicture}

@@ -1,0 +1,41 @@
+{\psset{unit=20mm}\psset{linejoin=1,linewidth=0.7pt}
+\pspicture(-1.58,-1.5)(1.62,1.55)
+%\psframe(-1.58,-1.5)(1.62,1.55)
+
+\pscircle(0,0){1}
+
+\multido{\na=1+1}{11}{%
+\rput(!\na\space -11 div 360 mul 285 add cos 1.17 mul \na\space -11 div 360 mul 285 add sin 1.17 mul){$\na$}%
+\pscircle*(!\na\space -11 div 360 mul 285 add cos \na\space -11 div 360 mul 285 add sin){0.04}%
+}
+
+\multido{\na=1+3,\nb=1+1}{11}{%
+\rput(!\na\space -11 div 360 mul 285 add cos 1.44 mul \na\space -11 div 360 mul 285 add sin 1.44 mul){$(\nb.)$}%
+}
+
+\psset{arrowscale=1.5 1.3,linewidth=1.4pt,nodesep=0.15}
+
+\psset{linecolor=blue!100!red}
+\pcline{->}(!1 -11 div 360 mul 285 add cos 1 -11 div 360 mul 285 add sin)(!4 -11 div 360 mul 285 add cos 4 -11 div 360 mul 285 add sin)
+\psset{linecolor=blue!90!red}
+\pcline{->}(!4 -11 div 360 mul 285 add cos 4 -11 div 360 mul 285 add sin)(!7 -11 div 360 mul 285 add cos 7 -11 div 360 mul 285 add sin)
+\psset{linecolor=blue!80!red}
+\pcline{->}(!7 -11 div 360 mul 285 add cos 7 -11 div 360 mul 285 add sin)(!10 -11 div 360 mul 285 add cos 10 -11 div 360 mul 285 add sin)
+\psset{linecolor=blue!70!red}
+\pcline{->}(!10 -11 div 360 mul 285 add cos 10 -11 div 360 mul 285 add sin)(!2 -11 div 360 mul 285 add cos 2 -11 div 360 mul 285 add sin)
+\psset{linecolor=blue!60!red}
+\pcline{->}(!2 -11 div 360 mul 285 add cos 2 -11 div 360 mul 285 add sin)(!5 -11 div 360 mul 285 add cos 5 -11 div 360 mul 285 add sin)
+\psset{linecolor=blue!50!red}
+\pcline{->}(!5 -11 div 360 mul 285 add cos 5 -11 div 360 mul 285 add sin)(!8 -11 div 360 mul 285 add cos 8 -11 div 360 mul 285 add sin)
+\psset{linecolor=blue!40!red}
+\pcline{->}(!8 -11 div 360 mul 285 add cos 8 -11 div 360 mul 285 add sin)(!11 -11 div 360 mul 285 add cos 11 -11 div 360 mul 285 add sin)
+\psset{linecolor=blue!30!red}
+\pcline{->}(!11 -11 div 360 mul 285 add cos 11 -11 div 360 mul 285 add sin)(!3 -11 div 360 mul 285 add cos 3 -11 div 360 mul 285 add sin)
+\psset{linecolor=blue!20!red}
+\pcline{->}(!3 -11 div 360 mul 285 add cos 3 -11 div 360 mul 285 add sin)(!6 -11 div 360 mul 285 add cos 6 -11 div 360 mul 285 add sin)
+\psset{linecolor=blue!10!red}
+\pcline{->}(!6 -11 div 360 mul 285 add cos 6 -11 div 360 mul 285 add sin)(!9 -11 div 360 mul 285 add cos 9 -11 div 360 mul 285 add sin)
+\psset{linecolor=blue!0!red}
+\pcline{->}(!9 -11 div 360 mul 285 add cos 9 -11 div 360 mul 285 add sin)(!1 -11 div 360 mul 285 add cos 1 -11 div 360 mul 285 add sin)
+
+\endpspicture}

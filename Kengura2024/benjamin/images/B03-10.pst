@@ -1,0 +1,7 @@
+{\psset{unit=4mm}\psset{linejoin=1,linecap=1,linewidth=3.5pt}
+\pspicture(-0.2,-0.2)(2.2,2.2)
+%\psframe[linewidth=0.1pt](-0.2,-0.2)(2.2,2.2)
+
+\rput(0.0,0){\psccurve(0,1)(0.9,0)(2,1.1)(1.1,2)\pscircle*(1,1){2.5pt}}
+
+\endpspicture}

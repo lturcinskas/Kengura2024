@@ -1,0 +1,26 @@
+{\psset{unit=6mm}\psset{linewidth=1.3pt,linejoin=1,linecap=0}
+\pspicture(-2.8,-1.05)(1.9,1.55)
+%\psframe(-2.8,-1.05)(1.9,1.55)
+
+\pnode(0;0){A}
+\pnode(2;30){B}
+\pnode(3;150){C}
+\pnode(1;270){D}
+
+{
+\psset{nrot=:U}
+\ncline{C}{A}
+\scalebox{0.75}{\nbput[labelsep=0.6,npos=0.1]{$3\cm$}}
+\ncline{A}{B}
+\scalebox{0.75}{\nbput[labelsep=0.6,npos=0.7]{$2\cm$}}
+}
+\ncline{A}{D}
+\scalebox{0.75}{\nbput[labelsep=0.7,npos=1.0]{$1\cm$}}
+\scalebox{0.75}{\naput[labelsep=0.5,npos=1.0]{$1\cm$}}
+
+\pcline[nodesepB=0.2,offset=-0.3,arrowscale=1.3 1.1]{->}(C)(A)
+\pcline[nodesepA=0.2,offset=-0.3,arrowscale=1.3 1.1]{->}(A)(D)
+\pcline[nodesepB=0.2,offset=-0.3,arrowscale=1.3 1.1]{->}(D)(A)
+\pcline[nodesepA=0.2,offset=-0.3,arrowscale=1.3 1.1]{->}(A)(B)
+
+\endpspicture}

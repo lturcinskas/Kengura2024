@@ -1,0 +1,9 @@
+{\psset{unit=5mm}\psset{linejoin=1,linewidth=0.7pt}
+\pspicture(0,0)(1,1)
+
+\def\squareA#1{\rput(#1){\pspolygon[linejoin=0,fillstyle=solid,fillcolor=black!10](0,0)(1,0)(1,1)(0,1)%
+\rput(0.5,0.5){\pspolygon[linejoin=0,fillstyle=solid,fillcolor=black!70](-0.2,0)(0,-0.3)(0.2,0)(0,0.3)}}}
+
+\squareA{0,0}
+
+\endpspicture}

@@ -1,0 +1,16 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{graphicx}
+
+\begin{document}
+  \begin{tikzpicture}
+    % Load PDF image
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=\textwidth]{P11gs.pdf}};
+      
+    \node[fill=white, opacity=1, text opacity=1, inner sep=1pt] at (1,0.2) {{\Large \textbf{A}}};
+    \node[fill=white, opacity=1, text opacity=1, inner sep=1pt] at (3.5,0.2) {{\Large \textbf{B}}};
+    \node[fill=white, opacity=1, text opacity=1, inner sep=1pt] at (6,0.2) {{\Large \textbf{C}}};
+    \node[fill=white, opacity=1, text opacity=1, inner sep=1pt] at (8.5,0.2) {{\Large \textbf{D}}};
+    \node[fill=white, opacity=1, text opacity=1, inner sep=1pt] at (11,0.2) {{\Large \textbf{E}}};
+  \end{tikzpicture}
+\end{document}

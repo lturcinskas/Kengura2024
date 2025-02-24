@@ -1,0 +1,84 @@
+\documentclass[14pt,a4paper, oneside]{memoir}
+\pdfoutput=1
+\usepackage{../other/expert}
+%\usepackage{../other/sprendimai}
+\graphicspath{ {./images/}{../preecolier/images/}{../ecolier/images/}{../benjamin/images/}
+{../cadet/images/}{../junior/images/}{../student/images/}}
+
+\input{../salygos/preecolier}
+\input{../salygos/ecolier}
+\input{../salygos/benjamin}
+\input{../salygos/cadet}
+\input{../salygos/junior}
+\input{../salygos/student}
+\begin{document}
+\greeting{lt}{7}
+\pointslt{3}
+\kpic{1}{
+	\begin{minipage}[t]{480pt}
+		\parshape 3 0pt 340pt 0pt 340pt 0pt 480pt
+		\EfiveLT
+\end{minipage}}{E05-1}{300pt}{0.45}
+%\vspace{-10pt}
+\kvoid{\aEfive}
+
+\kpic[5pt]{2}{\CthreeLT\newline\aCthree}{C03-1}{150pt}{0.8}
+
+\ktext{3}{\BfourEXP\newline\aBfourEXP}
+\kpic[5pt]{4}{\CsixLT\newline\aCsix}{C06-1}{130pt}{1}
+\kpic[10pt]{5}{\begin{minipage}[t]{480pt}
+		\parshape 4 0pt 290pt 0pt 290pt 0pt 250pt 0pt 480pt
+		\BnineEXP
+	\end{minipage}
+	\newline\aBnine}{B09-2}{150pt}{1.2}
+\newpage
+\kpic{6}{\JfiveLT\newline\aJfive}{J05-1}{70pt}{1.3}
+\kpic{7}{\JsixLT\newline\aJsix}{J06-1}{160pt}{0.8}
+\kpic{8}{\CuthreeLT\newline\aCuthree}{C13-1}{100pt}{1}
+\kpic{9}{\BufourLT\newline\aBufour}{B14-1}{700pt}{0.15}
+%\newpage
+\kpic{10}{
+	\begin{minipage}[t]{480pt}
+		\parshape 4 0pt 190pt 0pt 190pt 0pt 190pt 0pt 480pt
+		\EdthreeLT
+	\end{minipage}
+}{E23-1}{270pt}{1}
+\kvoid{\hspace{-10pt}\aEdthreeEXP}
+\newpage
+\pointslt{4}
+
+\kpic{11}{\StenLT\newline\aSten}{S10-1}{180pt}{0.8}
+\vspace{-10pt}
+\kpic[20pt]{12}{\EdfourLT\newline\aEdfour}{E24-3}{480pt}{0.15}
+\kpic{13}{\ButenLT\newline\aButenLT}{B20-2}{110pt}{1.1}
+\vspace{10pt}
+\kpic{14}{\BdoneLT\newline\aBdone}{B21-1}{150pt}{0.9}
+\vspace{10pt}
+\ktext{15}{\SufourLT\newline\aSufourEXP}
+\kpic[-10pt]{16}{\SusixLT\newline\aSusix}{S16-1}{200pt}{0.4}
+\ktext{17}{\SusevenEXP\vspace{3pt}\newline\aSusevenEXP}
+\ktext{18}{\JdtwoLT\newline\aJdtwo}
+\ktext{19}{\SutenLT\newline\aSuten}
+\kpic{20}{\JdfourLT\newline\aJdfour}{J24-1}{70pt}{1}
+%\newpage
+\pointslt{5}
+
+\ktext{21}{\CdsixLT\newline\aCdsix}
+\kpic[-20pt]{22}{\CdsevenLT\newline\aCdseven}{C27-1}{200pt}{0.9}
+\kpic[20pt]{23}{\CdeightLT}{C28-1}{270pt}{0.8}
+\kvoid{\aCdeight}
+\kpic{24}{\CdtenLT\newline\aCdten}{C30-1}{100pt}{1.1}
+\vspace{10pt}
+\ktext{25}{\SdfourEXP\newline\aSdfour}
+\ktext{26}{\JdsevenLT\newline\aJdseven}
+%\newpage
+\ktext{27}{\SdsevenLT\newline\aSdseven}
+\newline
+\ktext{28}{\SdnineLT\newline\aSdnine}
+%\newline
+\ktext{29}{\SdtenLT\newline\aSdten}
+%\newline
+\kpic{30}{\JdtenLT\newline\aJdten}{J30-1}{110pt}{1.3}
+%\newline
+\goodbye
+\end{document}

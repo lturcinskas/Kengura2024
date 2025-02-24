@@ -1,0 +1,16 @@
+{\psset{unit=7mm}\psset{linejoin=1,linewidth=0.04}
+\pspicture(0,0)(4.7,3.7)
+%\psframe(0,0)(5.1,3.7)
+
+\psline[linewidth=0.1](0,-0.05)(5.1,-0.05)
+
+\rput(0.8,0){\pspolygon[fillstyle=solid,fillcolor=black!15,linearc=0.1](0,0.02)(1.4,0.02)(1.4,0.98)(0,0.98)\rput(0.7,0.5){\textbf{A}}}
+\rput(2.8,0){\pspolygon[fillstyle=solid,fillcolor=black!15,linearc=0.1](0,0.02)(1.4,0.02)(1.4,0.98)(0,0.98)\rput(0.7,0.5){\textbf{B}}}
+\rput(0.5,1){\pspolygon[fillstyle=solid,fillcolor=black!15,linearc=0.1](0,0.02)(2.8,0.02)(2.8,0.98)(0,0.98)\rput(1.4,0.5){\textbf{C}}}
+\rput(3.5,1){\pspolygon[fillstyle=solid,fillcolor=black!15,linearc=0.1](0,0.02)(0.6,0.02)(0.6,0.98)(0,0.98)\rput(0.3,0.5){\textbf{D}}}
+\rput(0.7,2){\pspolygon[fillstyle=solid,fillcolor=black!15,linearc=0.1](0,0.02)(1.4,0.02)(1.4,0.98)(0,0.98)\rput(0.7,0.5){\textbf{E}}}
+\rput(2.5,2){\pspolygon[fillstyle=solid,fillcolor=black!15,linearc=0.1](0,0.02)(1.4,0.02)(1.4,0.98)(0,0.98)\rput(0.7,0.5){\textbf{F}}}
+
+%\psarcn[arrowscale=2.0 1.5]{->}(4.2,2.7){1}{150}{30}
+
+\endpspicture}

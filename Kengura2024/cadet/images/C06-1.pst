@@ -1,0 +1,12 @@
+{\psset{unit=5mm}\psset{linejoin=1,linewidth=0.7pt}
+\pspicture(0,0)(7,2)
+
+\pscircle(1,1){1}
+\pscircle(3.5,1){1}
+\pscircle(6,1){1}
+
+\rput(1,1){1}
+\rput(3.5,1){5}
+\rput(6,1){11}
+
+\endpspicture}

@@ -1,0 +1,22 @@
+{\psset{unit=4mm}\psset{linejoin=1,linewidth=0.7pt}
+\pspicture(0,0)(12.5,5)
+
+\def\formA{\pscircle[fillstyle=solid,fillcolor=orange!60!red](0,0){1}}
+\def\formB{\pspolygon[fillstyle=solid,fillcolor=green!95!black](!-2 3 sqrt div -1)(!2 3 sqrt div -1)(0,1)}
+\def\formC{\pspolygon[fillstyle=solid,fillcolor=blue!30!cyan](-1,-1)(1,-1)(1,1)(-1,1)}
+
+\rput(1,4){\formB}
+\rput(3,4){$+$}
+\rput(5,4){\formB}
+\rput(7,4){$=$}
+\rput(9,4){\formC}
+\rput(11.5,4){\formA}
+
+\rput(1,1){\formA}
+\rput(3,1){$+$}
+\rput(5,1){\formB}
+\rput(7,1){$=$}
+\rput(9,1){\formC}
+\rput(11.5,1){\formC}
+
+\endpspicture}

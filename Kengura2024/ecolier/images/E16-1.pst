@@ -1,0 +1,10 @@
+{\psset{unit=0.5mm}\psset{linejoin=1,linewidth=1pt}%
+\pspicture(0,0)(23,11)
+%
+\def\partA{\pspolygon[fillstyle=solid,fillcolor=black!15](0,0)(23,0)(23,11)(0,11)}%
+\def\partB{\pspolygon[fillstyle=solid,fillcolor=black!15](0,0)(11,0)(11,23)(0,23)}%
+\def\partC{\pspolygon[fillstyle=solid,fillcolor=black!80](0,0)(6,0)(6,6)(0,6)}%
+%
+\partA
+%
+\endpspicture}

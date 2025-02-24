@@ -1,0 +1,9 @@
+{\psset{unit=7mm}\psset{linejoin=1,linewidth=0.7pt}
+\pspicture(0,0)(6,2)
+
+\rput(0.0,0){\pspolygon[fillstyle=solid,fillcolor=black!70](0,0)(1.2,0)(1.2,2)(0,2)\rput(0.6,1){\color{white}\scalebox{2}{\textbf{?}}}}
+\rput(1.6,0){\pspolygon[fillstyle=solid,fillcolor=black!5](0,0)(1.2,0)(1.2,2)(0,2)\rput(0.6,1){\scalebox{2}{\textbf{5}}}}
+\rput(3.2,0){\pspolygon[fillstyle=solid,fillcolor=black!70](0,0)(1.2,0)(1.2,2)(0,2)\rput(0.6,1){\color{white}\scalebox{2}{\textbf{?}}}}
+\rput(4.8,0){\pspolygon[fillstyle=solid,fillcolor=black!5](0,0)(1.2,0)(1.2,2)(0,2)\rput(0.6,1){\scalebox{2}{\textbf{6}}}}
+
+\endpspicture}

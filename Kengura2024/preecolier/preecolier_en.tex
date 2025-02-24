@@ -1,0 +1,56 @@
+\documentclass[12pt,a4paper,twocolumn,landscape,oneside]{memoir}
+\pdfoutput=1
+\usepackage{../other/kenguraP}
+\renewcommand\shapedefault{\scdefault}
+\renewcommand{\textbf}[1]{{\normalfont\bfseries#1}}
+\input{../salygos/preecolier}
+\begin{document}
+\kpic{14}{\PufourEN\newline\aPufour}{P14-1}{80pt}{1.2}
+\kpic{15}{\PufiveEN\newline\aPufive}{P15-1}{290pt}{0.3}
+%plociai[100, 100]
+\vbox{
+\kpic[-20]{16}{\PusixEN\newline}{P16-1}{100pt}{0.6}
+\kvoid{\aPusix}
+}
+\kpic{17}{\PusevenEN\newline\aPuseven}{P17-1EN}{170pt}{0.5}
+\ktext{18}{\PueightEN\newline\aPueight}
+%%Put us somewhere
+\goodbye
+\newpage
+\greeting{en}{1}
+\pointsen{3}
+\kpic[-20pt]{1}{\PoneEN\newline\aPone}{P01-1}{150pt}{0.8}
+%\kpic{2}{\PtwoEN\newline\aPtwo}{P02-1}{500pt}{0.15}
+\vspace{-30pt}
+\kpic[10pt]{2}{\begin{minipage}[t]{375pt}
+\parshape 4 0pt 280pt 0pt 280pt 0pt 280pt 0pt 375pt
+\PtwoEN
+\end{minipage}\vspace{3pt}\newline\aPtwo}{P02-1}{500pt}{0.15}
+\kpic[-15pt]{3}{\PthreeEN\newline\aPthree}{P03-1}{300pt}{0.35}
+\kpic{4}{\begin{minipage}[t]{375pt}
+\parshape 5 0pt 250pt 0pt 250pt 0pt 250pt 0pt 250pt 0pt 375pt
+\PfourEN
+\end{minipage}\newline\aPfourEN}{P04-1}{400pt}{0.3}
+\newpage
+\ktext{5}{\PfiveEN\newline\aPfive}
+\kpic[-10pt]{6}{\PsixEN\newline\aPsix}{P06-1}{100pt}{0.6}
+
+\pointsen{4}
+
+\ktext{7}{\PsevenEN\vspace{3pt}\newline\aPseven}
+\kpic{8}{\PeightEN\vspace{10pt}\newline\aPeight}{P08-1}{200pt}{0.4}
+\ktext{9}{\PnineEN\newline\aPnine}
+\kpic[-20]{10}{\PtenEN\newline\aPten}{P10-1}{170pt}{0.6}
+%plociai[100, 100]
+\ktext{11}{\PuoneEN\newline\aPuone}
+%plociai[100, 100]
+\vbox{
+\kpic[-20]{12}{\PutwoEN\newline}{P12-1}{350pt}{0.6}
+\kvoid{\aPutwo}
+}
+
+\pointsen{5}
+
+\ktext{13}{\PuthreeEN\newline\aPuthree}
+
+\end{document}

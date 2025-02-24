@@ -1,0 +1,16 @@
+{\psset{unit=8mm}\psset{linejoin=1,linewidth=0.7pt}
+\pspicture(-2.8,-2.8)(2.8,2.8)
+
+\pscircle(0,0){2.5}
+
+\multido{\n=0.0+22.5}{16}{%
+\pscircle[fillstyle=solid,fillcolor=black!0](2.5;\n){0.3}%
+}
+\multido{\n=112.5+22.5,\na=6+1}{8}{%
+\rput(2.5;\n){\scalebox{0.9}{\na}}%
+}
+\multido{\n=90.0+-22.5,\na=5+1}{8}{%
+\rput(2.5;\n){\scalebox{0.9}{\na}}%
+}
+
+\endpspicture}

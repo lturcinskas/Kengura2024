@@ -1,0 +1,11 @@
+{\psset{unit=5mm}\psset{linejoin=1,linewidth=0.06,dotsep=0.1}%
+\pspicture(-0.4,-0.4)(4.4,4.4)%
+%
+{\psclip{\pspolygon[linestyle=none](-0.4,-0.4)(4.4,-0.4)(4.4,4.4)(-0.4,4.4)}%
+\multido{\na=0+1}{5}{\multido{\nb=-1.03+1.00,\nc=0.03+1.00}{6}{\psline[linestyle=dotted](\nb,\na)(\nc,\na)}}%
+\multido{\na=0+1}{5}{\multido{\nb=-1.03+1.00,\nc=0.03+1.00}{6}{\psline[linestyle=dotted](\na,\nb)(\na,\nc)}}%
+\pspolygon[linejoin=0,linewidth=1.4pt](0,0)(4,0)(4,4)(0,4)%
+\psline[linewidth=1.4pt](3,0)(3,2)(1,2)(1,4)%
+\endpsclip}%
+%
+\endpspicture}

@@ -1,0 +1,24 @@
+{\psset{unit=7mm}\psset{linejoin=1,linewidth=0.7pt}
+\pspicture(0,0)(10,7)
+%\psframe(0,0)(10,7)
+
+\uput{0.1}[r](2,3.5){$\ell_1$}
+\uput{0.15}[!180 2 arctan sub](3.5,2.75){$\ell_2$}
+\uput{0.15}[!2 arctan neg](3.5,4.25){$\ell_3$}
+
+% l1
+\psline(2,0)(2,7)
+\multido{\n=6.70+0.25}{6}{\psline(\n,0)(\n,7)}
+
+% l2
+\psline(0,1)(10,6)
+\psline(0,0.25)(10,5.25)
+\psline(0,0)(10,5)
+
+% l3
+\psline(0,6)(10,1)
+
+% l4
+\psline(0,1.7)(10,1.7)
+
+\endpspicture}

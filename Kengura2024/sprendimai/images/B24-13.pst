@@ -1,0 +1,45 @@
+{\psset{unit=8mm}\psset{linewidth=0.5pt,linejoin=1}
+\pspicture(-1.35,-0.5)(1.35,2.4)
+%\psframe(-1.35,-0.5)(1.35,2.4)
+
+\psset{viewpoint=20 -50 20 rtp2xyz}
+
+\rput(0,0){%
+\ThreeDput[normal=0 0 1](0,0,2){
+\multido{\n=1+1,\na=-1+1}{3}{\pnode(\na,-1){P33\n}}
+\multido{\n=1+1,\na=-1+1}{3}{\pnode(\na,0){P32\n}}
+\multido{\n=1+1,\na=-1+1}{3}{\pnode(\na,1){P31\n}}
+}
+\ThreeDput[normal=0 0 1](0,0,1){
+\multido{\n=1+1,\na=-1+1}{3}{\pnode(\na,-1){P23\n}}
+\multido{\n=1+1,\na=-1+1}{3}{\pnode(\na,0){P22\n}}
+\multido{\n=1+1,\na=-1+1}{3}{\pnode(\na,1){P21\n}}
+}
+\ThreeDput[normal=0 0 1](0,0,0){
+\multido{\n=1+1,\na=-1+1}{3}{\pnode(\na,-1){P13\n}}
+\multido{\n=1+1,\na=-1+1}{3}{\pnode(\na,0){P12\n}}
+\multido{\n=1+1,\na=-1+1}{3}{\pnode(\na,1){P11\n}}
+}
+\pspolygon[fillstyle=solid,fillcolor=black!10](P131)(P133)(P333)(P331)% l
+\pspolygon[fillstyle=solid,fillcolor=black!10](P133)(P113)(P313)(P333)% r
+\pspolygon[fillstyle=solid,fillcolor=black!10](P331)(P333)(P313)(P311)% o
+%
+\pspolygon[fillstyle=solid,fillcolor=black!70](P131)(P132)(P232)(P331)
+\pspolygon[fillstyle=solid,fillcolor=black!70](P232)(P333)(P332)
+\pspolygon[fillstyle=solid,fillcolor=black!70](P133)(P233)(P232)
+%
+\pspolygon[fillstyle=solid,fillcolor=black!70](P133)(P123)(P223)(P233)
+\pspolygon[fillstyle=solid,fillcolor=black!70](P113)(P213)(P223)
+\pspolygon[fillstyle=solid,fillcolor=black!70](P223)(P313)(P333)
+%
+\pspolygon[fillstyle=solid,fillcolor=black!70](P332)(P333)(P313)(P312)
+%
+\pspolygon[linewidth=1.4pt](P131)(P133)(P333)(P331)
+\pspolygon[linewidth=1.4pt](P133)(P113)(P313)(P333)
+\pspolygon[linewidth=1.4pt](P331)(P333)(P313)(P311)
+\psline(P131)(P333)\psline(P133)(P331)\psline(P332)(P132)\psline(P231)(P233)
+\psline(P133)(P313)\psline(P113)(P333)\psline(P123)(P323)\psline(P213)(P233)
+\psline(P311)(P333)\psline(P313)(P331)\psline(P321)(P323)\psline(P312)(P332)
+}
+
+\endpspicture}

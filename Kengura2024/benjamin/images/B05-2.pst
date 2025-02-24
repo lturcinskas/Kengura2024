@@ -1,0 +1,9 @@
+{\psset{unit=5mm}\psset{linejoin=1,linewidth=0.7pt}
+\pspicture(0,0)(1,1)
+
+\def\squareB#1{\rput(#1){\pspolygon[linejoin=0,fillstyle=solid,fillcolor=black!10](0,0)(1,0)(1,1)(0,1)%
+\rput(0.5,0.5){\pspolygon[fillstyle=solid,fillcolor=black!0](0.4;0)(0.2;30)(0.4;60)(0.2;90)(0.4;120)(0.2;150)(0.4;180)(0.2;210)(0.4;240)(0.2;270)(0.4;300)(0.2;330)}}}
+
+\squareB{0,0}
+
+\endpspicture}

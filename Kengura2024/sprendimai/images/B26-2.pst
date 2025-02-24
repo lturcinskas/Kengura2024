@@ -1,0 +1,27 @@
+{\psset{unit=6mm}\psset{linewidth=0.5pt,linejoin=1,linecap=1}
+\pspicture(-3.3,-3.45)(3.3,3.4)
+%\psframe(-3.3,-3.45)(3.3,3.4)
+
+\psset{viewpoint=100 30 22 rtp2xyz,Decran=200,object=cube,a=2,action=draw*}
+
+\psSolid(0,0,0)
+
+\psPoint(1,1,1){A1}
+\psPoint(1,-1,1){A2}
+\psPoint(-1,-1,1){A3}
+\psPoint(-1,1,1){A4}
+\psPoint(1,1,-1){A5}
+\psPoint(1,-1,-1){A6}
+\psPoint(-1,-1,-1){A7}
+\psPoint(-1,1,-1){A8}
+
+\rput(A1){\pscircle[fillstyle=solid,fillcolor=black!10](0,0){0.5}\rput(0,0){2}}
+\rput(A2){\pscircle[fillstyle=solid,fillcolor=black!10](0,0){0.5}\rput(0,0){5}}
+\rput(A3){\pscircle[fillstyle=solid,fillcolor=black!10](0,0){0.5}\rput(0,0){4}}
+\rput(A4){\pscircle[fillstyle=solid,fillcolor=black!10](0,0){0.5}\rput(0,0){7}}
+\rput(A5){\pscircle[fillstyle=solid,fillcolor=black!10](0,0){0.5}\rput(0,0){8}}
+\rput(A6){\pscircle[fillstyle=solid,fillcolor=black!10](0,0){0.5}\rput(0,0){3}}
+\rput(A7){\pscircle[fillstyle=solid,fillcolor=black!10](0,0){0.5}\rput(0,0){6}}
+\rput(A8){\pscircle[fillstyle=solid,fillcolor=black!10](0,0){0.5}\rput(0,0){1}}
+
+\endpspicture}

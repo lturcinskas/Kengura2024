@@ -1,0 +1,832 @@
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{amssymb}
+%\DeclareGraphicsExtensions{.pdf,.PDF,.png,.PNG,.eps} % prefer pdf to png
+\usepackage{tikz}
+\usepackage[utf8x]{inputenc}  
+\usepackage{lmodern}
+\usepackage[L7x]{fontenc}     
+\usepackage[lithuanian]{babel}
+%\usepackage[T1,T2A]{fontenc}
+%$\usepackage[lithuanian,polish,russian]{babel}
+\usepackage{anyfontsize}
+\usepackage{lipsum}
+\usepackage{pdfpages}
+\usepackage{xspace}
+\usepackage{hyperref}
+%\usepackage[none]{hyphenat}
+%\usepackage{tgheros}
+
+\newcommand\ttt[1]{\textbf{#1}}
+\def\A{\textbf{A}\xspace}
+\def\B{\textbf{B}\xspace}
+\def\C{\textbf{C}\xspace}
+\def\D{\textbf{D}\xspace}
+\def\E{\textbf{E}\xspace}
+
+\renewcommand{\geq}{\geqslant}
+\renewcommand{\leq}{\leqslant}
+
+\setsecnumdepth{none}
+\maxsecnumdepth{none}
+
+
+\setlrmarginsandblock{50pt}{50pt}{*}
+\setulmarginsandblock{50pt}{80pt}{*}
+\setheadfoot{10pt}{0pt}
+\setheaderspaces{25pt}{*}{*}
+\checkandfixthelayout[fixed]
+
+%\setlength{\parindent}{0pt}
+\pagestyle{empty}
+
+\newlength{\gnot}
+
+%%%%%%Paveiksliukai tekste
+\newcommand{\vcenteredinclude}[2][1]{\begingroup
+  \setbox0=\hbox{\includegraphics[scale=#1]{#2}}%
+\parbox{\wd0}{\box0}\endgroup}
+
+%Compatibility with polish
+\newcommand{\mat}[1]{$#1$}
+\newcommand{\Mat}[1]{$$#1$$}
+\newcommand{\luka}[1][\,]{\ensuremath{\mathord{#1}}}
+\newcommand*{\koma}[1][,]{\ensuremath{\mathord{#1}}}
+\newcommand{\rysunek}[2]{\includegraphics[scale=#1]{#2}}
+
+%minus
+\newcommand{\minus}{\scalebox{0.75}[1.0]{$-$}}
+
+\newcommand*\mycirc[1]{%
+  \begin{tikzpicture}[baseline=(C.base)]
+    \node[draw,circle,inner sep=1pt](C) {#1};
+  \end{tikzpicture}
+}
+
+\newcommand{\aps}{\includegraphics[scale=0.6]{circle}}
+\newcommand{\kvd}{\includegraphics[scale=0.6]{square}}
+\newcommand{\trk}{\includegraphics[scale=0.6]{triangle}}
+\newcommand{\hex}{\includegraphics[scale=0.3]{hexagon}}
+
+\newcommand\s[3]{
+  \vspace{15pt}
+  \begin{minipage}[t]{17pt}
+    \vspace{0pt}
+    \mbox{}
+  \end{minipage}
+  \begin{minipage}[t]{\textwidth}
+    \vspace{0pt}
+    \textbf{#1. \mycirc{#2}} #3
+  \end{minipage}
+}
+
+\newcommand\stext[2]{
+  \settowidth{\gnot}{\textbf{\Large{#1}}}
+
+  \begin{minipage}[t]{17pt}
+    \vspace{0pt}
+    \mbox{}
+  \end{minipage}
+  \begin{minipage}[t]{\tl}
+    \setlength{\parindent}{24pt}
+    \setlength{\parskip}{2pt}
+    \vspace{0pt}
+    \noindent\hspace{-4pt}\hspace{-\gnot}\raisebox{-2pt}{\textbf{\Large{#1}}}\hspace{4pt}\ignorespaces#2
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{0pt}
+  \end{minipage}
+  \vfill
+}
+
+\newcommand\stextnofill[2]{
+  \settowidth{\gnot}{\textbf{\Large{#1}}}
+
+  \begin{minipage}[t]{17pt}
+    \vspace{0pt}
+    \mbox{}
+  \end{minipage}
+  \begin{minipage}[t]{\tl}
+    \setlength{\parindent}{24pt}
+    \setlength{\parskip}{2pt}
+    \vspace{0pt}
+    \noindent\hspace{-4pt}\hspace{-\gnot}\raisebox{-2pt}{\textbf{\Large{#1}}}\hspace{4pt}\ignorespaces#2
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{0pt}
+  \end{minipage}
+}
+
+\newcommand\stextpic[6][0pt]{
+  \settowidth{\gnot}{\textbf{\Large{#2}}}
+
+  \setlength{\figlength}{#5}
+  \setlength{\scaledfig}{#6\figlength}
+  \setlength{\textlength}{470pt}
+  \addtolength{\textlength}{-\scaledfig}
+
+  \noindent
+  \begin{minipage}[t]{17pt}
+    \vspace{0pt}
+    \mbox{}
+  \end{minipage}
+  \begin{minipage}[t]{\textlength}
+    \setlength{\parindent}{24pt}
+    \setlength{\parskip}{2pt}
+    \vspace{0pt}
+    \noindent\hspace{-4pt}\hspace{-\gnot}\raisebox{-2pt}{\textbf{\Large{#2}}}\hspace{4pt}\ignorespaces#3
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{0pt}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{\scaledfig}
+    \vspace{#1}
+    \hfill
+    \includegraphics[scale=#6]{#4}
+  \end{minipage}
+  \vfill
+}
+
+\newcommand\stextpicnofill[6][0pt]{
+  \settowidth{\gnot}{\textbf{\Large{#2}}}
+
+  \setlength{\figlength}{#5}
+  \setlength{\scaledfig}{#6\figlength}
+  \setlength{\textlength}{470pt}
+  \addtolength{\textlength}{-\scaledfig}
+
+  \noindent
+  \begin{minipage}[t]{17pt}
+    \vspace{0pt}
+    \mbox{}
+  \end{minipage}
+  \begin{minipage}[t]{\textlength}
+    \setlength{\parindent}{24pt}
+    \setlength{\parskip}{2pt}
+    \vspace{0pt}
+    \noindent\hspace{-4pt}\hspace{-\gnot}\raisebox{-2pt}{\textbf{\Large{#2}}}\hspace{4pt}\ignorespaces#3
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{0pt}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{\scaledfig}
+    \vspace{#1}
+    \hfill
+    \includegraphics[scale=#6]{#4}
+  \end{minipage}
+}
+
+\newcommand\svoid[1]{
+	\vspace{3pt}
+\kvoid{\hspace*{22pt} #1}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+
+\newcommand\pID[1]{\textbf{#1.\unskip}\unskip}
+
+\newcommand\answer[5]{\textbf{A)} #1 \quad \textbf{B)} #2 \quad\textbf{C)}
+#3 \quad\textbf{D)} #4 \quad\textbf{E)} #5}
+\newcommand\toiganswer[5]{\answer{#1}{#2}{#3}{#4}{#5}}
+\newcommand\toightanswer[5]{\textbf{A)}#1 \textbf{B)}#2 \textbf{C)}#3 \textbf{D)}#4 \textbf{E)}#5}
+\newcommand\toianswer[5]{\textbf{A)} #1 \ \ \textbf{B)} #2 \ \ \textbf{C)} #3 \ \
+\textbf{D)} #4 \ \ \textbf{E)} #5}
+\newcommand\fillanswer[5]{\textbf{A)}~#1 \hfill \textbf{B)}~#2 \hfill\textbf{C)}~#3 \hfill\textbf{D)}~#4 \hfill\textbf{E)}~#5}
+\newcommand\fanswer[5]{\textbf{A)}#1\hfill\textbf{B)}#2\hfill\textbf{C)}#3\hfill\textbf{D)}#4\hfill\textbf{E)}#5}
+\newcommand\hanswer[6][-10pt]{\noindent\textbf{A)}\hspace{#1}#2\hfill\textbf{B)}\hspace{#1}#3\hfill\textbf{C)}\hspace{#1}#4\hfill\textbf{D)}\hspace{#1}#5\hfill\textbf{E)}\hspace{#1}#6}
+\newcommand\granswer[6][1]{
+\fillanswer
+{\includegraphics[scale=#1]{#2}}
+{\includegraphics[scale=#1]{#3}}
+{\includegraphics[scale=#1]{#4}}
+{\includegraphics[scale=#1]{#5}}
+{\includegraphics[scale=#1]{#6}}
+}
+
+%point announcements
+\newcommand\pointsen[1]{
+\vspace{5pt}
+\noindent\textbf{Questions for #1 points}}
+
+\newcommand\pointslt[1]{
+\vspace{5pt}
+\noindent\textbf{Klausimai po #1 taškus}
+\vspace{5pt}}
+
+\newcommand\pointspl[1]{
+\vspace{5pt}
+\ifnum#1=5
+\noindent\textbf{Pytania po #1 punktów}
+\else
+\noindent\textbf{Pytania po #1 punkty}
+\fi}
+
+\newcommand\pointsru[1]{
+\vspace{5pt}
+\ifnum#1=5
+\noindent\textbf{Задачи, оцениваемые в #1 очков}
+\else
+\noindent\textbf{Задачи, оцениваемые в #1 очка}
+\fi}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%--- Problem Layouts ---%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newlength{\gnat}
+\newlength{\tl}
+\setlength{\tl}{480pt}
+
+%problem layouts: simple text with no fill in the end
+\newcommand\ktextnofill[2]{
+  \settowidth{\gnat}{\textbf{#1.}}
+  \begin{minipage}[t]{17pt}
+    \vspace{0pt}
+    \mbox{}
+  \end{minipage}
+  \begin{minipage}[t]{\tl}
+    \vspace{0pt}
+    \hspace{-4pt}\hspace{-\gnat}\textbf{#1.}\hspace{4pt}\ignorespaces#2
+  \end{minipage}
+}
+
+
+%problem layouts: simple text with fill in the end
+\newcommand\ktext[2]{
+  \ktextnofill{#1}{#2}
+  \vfill
+}
+
+%problem layouts: simple picture with variable image height and no fill
+\newlength{\figlength}
+\newlength{\scaledfig}
+\newlength{\textlength}
+
+\newcommand\kpicnofill[6][0pt]{
+  \settowidth{\gnat}{\textbf{#2.}}
+
+  \setlength{\figlength}{#5}
+  \setlength{\scaledfig}{#6\figlength}
+  \setlength{\textlength}{\tl}
+  \addtolength{\textlength}{-\scaledfig}
+
+  \noindent
+  \begin{minipage}[t]{17pt}
+    \vspace{0pt}
+    \mbox{}
+  \end{minipage}
+  \begin{minipage}[t]{\textlength}
+    \vspace{0pt}
+    \hspace{-4pt}\hspace{-\gnat}\textbf{#2.}\hspace{4pt}\ignorespaces#3
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{\scaledfig}
+    \vspace{#1}
+    \hfill
+    \includegraphics[scale=#6]{#4}
+  \end{minipage}
+}
+
+%problem layouts: simple picture with variable image height and fill
+\newcommand\kpic[6][0pt]{
+  \settowidth{\gnat}{\textbf{#2.}}
+
+  \setlength{\figlength}{#5}
+  \setlength{\scaledfig}{#6\figlength}
+  \setlength{\textlength}{\tl}
+  \addtolength{\textlength}{-\scaledfig}
+
+  \noindent
+  \begin{minipage}[t]{17pt}
+    \vspace{0pt}
+    \mbox{}
+  \end{minipage}
+  \begin{minipage}[t]{\textlength}
+    \vspace{0pt}
+    \hspace{-4pt}\hspace{-\gnat}\textbf{#2.}\hspace{4pt}\ignorespaces#3
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{\scaledfig}
+    \vspace{#1}
+    \hfill
+    \includegraphics[scale=#6]{#4}
+  \end{minipage}
+  \vfill
+}
+
+%problem layouts: simple picture with variable image heigth and number
+%height
+\newcommand\kpicN[7][0pt]{
+
+
+\setlength{\figlength}{#6}
+\setlength{\scaledfig}{#7\figlength}
+\setlength{\textlength}{377pt}
+\addtolength{\textlength}{-\scaledfig}
+
+\noindent
+\begin{minipage}[t]{17pt}
+\vspace{#2}
+\begin{flushright}
+  \pID{#3}
+\end{flushright}
+\end{minipage}
+\begin{minipage}[t]{\textlength}
+\vspace{0pt}
+#4
+\end{minipage}
+\hfill
+\begin{minipage}[t]{\scaledfig}
+\vspace{#1}
+\hfill
+\includegraphics[scale=#7]{#5}
+\end{minipage}
+\vfill
+}
+
+%problem layouts: fake ktext for out of box answers
+\newcommand\kvoid[1]{
+  \begin{minipage}[t]{17pt}
+    \vspace{0pt}
+    \mbox{}
+  \end{minipage}
+  \begin{minipage}[t]{\tl}
+    \vspace{0pt}
+    #1
+  \end{minipage}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makeheadrule{headings}{\textwidth}{\normalrulethickness}
+\pagestyle{headings}
+
+\makechapterstyle{def}{%
+\def\chapterheadstart{
+\def\printchaptername{\chapnamefont \@chapapp}}
+\def\printchaptertitle##1{\centering\chaptitlefont ##1}
+\def\afterchaptertitle{\par\nobreak\vskip \afterchapskip}}
+\chapterstyle{def}
+
+\setsecheadstyle{\vspace{-20pt}\centering\Large}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Tekstai  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\titlepageB[3]{
+\thispagestyle{empty}
+\begin{center}
+  {\small KENGŪROS KONKURSO ORGANIZAVIMO KOMITETAS\\}
+  {\small \uppercase{Vilniaus universitetas}\\}
+  {\small LIETUVOS MATEMATIKŲ DRAUGIJA}
+\end{center}
+\begin{center}
+  \includegraphics[scale=0.08]{../other/vu-logo}
+\end{center}
+\vfill
+\begin{center}
+  \begin{minipage}[t]{300pt}
+    \begin{center}
+      {\Large KENGŪRA \the\year. #1}
+      \bigskip
+
+      {\small TARPTAUTINIO MATEMATIKOS KONKURSO UŽDUOTYS IR SPRENDIMAI}
+
+      \vspace{30pt}
+
+      Autorė ir sudarytoja
+
+      #2
+      \bigskip
+
+      Redaktorius
+
+      #3
+%      \bigskip
+%
+%      Maketavo
+%
+%      Ugnė Gudžinskaitė
+
+     
+    \end{center}
+  \end{minipage}
+\end{center}
+
+\begin{center}
+  \vfill
+%  \includegraphics[scale=0.8]{./images/lmd-logo}
+
+  \vspace{20pt}
+  \copyright \ #2, \the\year
+
+  \copyright \ \emph{Kengūros} konkurso organizavimo komitetas, \the\year
+\end{center}
+\newpage
+}
+
+\newcommand\titlepage[5][Autorius ir sudarytojas]{
+\thispagestyle{empty}
+\begin{center}
+  {\small KENGŪROS KONKURSO ORGANIZAVIMO KOMITETAS\\}
+  {\small \uppercase{Vilniaus universitetas}\\}
+  {\small LIETUVOS MATEMATIKŲ DRAUGIJA}
+\end{center}
+\begin{center}
+  \includegraphics[scale=0.08]{../other/vu-logo}
+\end{center}
+\vfill
+\begin{center}
+  \begin{minipage}[t]{300pt}
+    \begin{center}
+      {\Large KENGŪRA #5. #2}
+      \bigskip
+
+      {\small TARPTAUTINIO MATEMATIKOS KONKURSO UŽDUOTYS IR SPRENDIMAI}
+
+      \vspace{30pt}
+
+      #1
+
+      #3
+      \bigskip
+
+      Redaktorius
+
+      #4
+      \bigskip
+
+      Maketavo
+
+      Ugnė Gudžinskaitė
+
+     
+    \end{center}
+  \end{minipage}
+\end{center}
+
+\begin{center}
+  \vfill
+%  \includegraphics[scale=0.8]{./images/lmd-logo}
+
+  \vspace{20pt}
+  \copyright \ #3, \the\year
+
+  \copyright \ \emph{Kengūros} konkurso organizavimo komitetas, \the\year
+\end{center}
+\newpage
+}
+
+\newcommand\titlepageS[3]{
+\thispagestyle{empty}
+\begin{center}
+  {\small KENGŪROS KONKURSO ORGANIZAVIMO KOMITETAS\\}
+  {\small \uppercase{Vilniaus universitetas\\}}
+  {\small LIETUVOS MATEMATIKŲ DRAUGIJA}
+\end{center}
+\begin{center}
+  \includegraphics[scale=0.08]{../other/vu-logo}
+\end{center}
+\vfill
+\begin{center}
+  \begin{minipage}[t]{300pt}
+    \begin{center}
+      {\Large KENGŪRA #3. #1}
+      \bigskip
+
+      {\small TARPTAUTINIO MATEMATIKOS KONKURSO UŽDUOTYS IR SPRENDIMAI}
+
+      \vspace{30pt}
+
+      Autorius ir sudarytojas
+
+      #2
+      \bigskip
+
+      Maketavo
+
+     Ugnė Gudžinskaitė  
+    \end{center}
+  \end{minipage}
+\end{center}
+
+\begin{center}
+  \vfill
+%  \includegraphics[scale=0.8]{./images/lmd-logo}
+ 
+%  \vspace{20pt}
+  \copyright \ #2, \the\year
+
+  \copyright \ \emph{Kengūros} konkurso organizavimo komitetas, \the\year
+\end{center}
+\newpage
+}
+
+\newcommand\titlepageK[2]{
+\thispagestyle{empty}
+\begin{center}
+  {\small KENGŪROS KONKURSO ORGANIZAVIMO KOMITETAS\\}
+  {\small \uppercase{Vilniaus universitetas\\}}
+  {\small LIETUVOS MATEMATIKŲ DRAUGIJA}
+\end{center}
+\begin{center}
+  \includegraphics[scale=0.08]{../other/vu-logo}
+\end{center}
+\vfill
+\begin{center}
+  \begin{minipage}[t]{300pt}
+    \begin{center}
+      {\Large KENGŪRA \the\year. #1}
+      \bigskip
+
+      {\small TARPTAUTINIO MATEMATIKOS KONKURSO UŽDUOTYS IR SPRENDIMAI}
+
+      \vspace{30pt}
+
+      Autoriai ir sudarytojai
+
+      #2 %ir #3
+      \bigskip
+
+      %Redaktorius
+
+      %#3
+      %\bigskip
+
+      %Maketavo
+
+      %Ugnė Gudžinskaitė 
+    \end{center}
+  \end{minipage}
+\end{center}
+
+\begin{center}
+  \vfill
+%  \includegraphics[scale=0.3]{./images/mif-logo}
+%  \qquad
+%  \includegraphics[scale=0.8]{./images/lmd-logo}
+%  \vspace{20pt}
+%  \qquad
+%  \includegraphics[scale=3]{./images/mii-logo}
+
+  %\copyright \ #2, \the\year
+  
+ % \copyright \ #3, \the\year
+
+  \copyright \ \emph{Kengūros} konkurso organizavimo komitetas, \the\year
+\end{center}
+\newpage
+}
+
+\newcommand\pratarme[6]{
+\chapter{Pratarmė} 
+
+\pagestyle{headings}
+\setlength{\parindent}{24pt}
+\setlength{\parskip}{0pt}
+\thispagestyle{empty}
+\mbox{}\indent Paprastai žiūrint, \emph{Kengūros} konkursas tėra tik kelios
+dešimtys (tiesa, labai nekasdieniškų)
+matematikos uždavinių, susitikimas su kuriais už sprendėjo suolo trunka
+nepilnas dvi akademines valandas. Ir viskas. Tik tiek.
+     
+Paprastai žiūrint, ir mūsų garsiausiojo alpinisto Vlado Vitkausko
+paskutinis metras įkopiant į Everestą irgi susidėjo ne iš šimto judesių, o
+kai kurie iš jų gal ir apskritai tebuvo tik krustelėjimai. Tiesa, tie
+krustelėjimai turėjo būti nežmoniškai sunkūs.
+     
+Tačiau kodėl tiek daug žmonių tų kopimų imasi į realius kalnus ir kodėl net
+per 5 milijonus vidurinės mokyklos mokinių kasmet pavasarį kopia į
+\emph{Kengūros} kalnelius? Kuo tie \emph{Kengūros} kalneliai tokie
+patrauklūs, kokios ten aukštumėlės atsiveria? Juk dabar jau nebeišsisuksi
+burbtelėjęs: „Jie neturi ką veikti, tai ir sprendinėja visokius
+uždavinukus“. Juk nepasakysi, kad milijonai taip jau ir neturi ką veikti
+šitokioje pramogų gadynėje.
+     
+Ar tik ne todėl, kad tie milijonai gerai žino, jog baigiamajame kopime jų
+laukia nors ir įveikiami, bet labai gražūs, patrauklūs
+uždaviniai, kuriuos spręsdamas gali užsikabinti pačia tauriausia to
+žodžio teikiama prasme? Kaip tai žinojo (o jei ne -- tai sužinojo) per #1
+Lietuvos 1--12 klasių mokinių, dalyvavusių konkurse #6 metais. Nors, žinoma, šiais metais viskas dėl tos nelemtos pandemijos
+atrodė, pakrypo ir klostėsi visiškai kitaip negu iki šiol. Pasitvirtino visiems teoriškai gerai girdėta išmintis,
+kad karantininis gyvenimas yra pilnas staigmenų ir netikėtumų: konkursas iš trečiojo kovo ketvirtadienio
+nusikėlė į vėlesnę datą ir vyko nuotoliniu būdu.
+
+%Juk konkursas -- it žavus
+%tornadas (o tokių irgi būna) -- negriaudamas supurto įtemptą mokyklos dienų
+%tėkmę ir pralėkęs palieka beveik nematomą, bet aiškų pėdsaką visų
+%susidūrusių su juo vaizduotėse. Jo imi ilgėtis dažnai pats to nesuvokdamas
+%-- žymia dalimi būtent iš to ilgesio pamatyti paprastų, gražių bei
+%viliojančių uždavinių ir atsiranda milijonai dalyvaujančiųjų. 
+     
+Keliasdešimt lemtingų darbo minučių
+%kiekvienų metų kovo mėnesio trečiąjį ketvirtadienį
+vainikuoja begalę įdėtų pastangų ir kruopštų triūsą,
+neįkyriai visam išminties trokštančiam pasauliui be paliovos teigdamos,
+kad galvą laužyti prasminga, kad ir matematikos užduotis besprendžiant
+galima patirti žaismingumą, spėliojimo azartą, žaibiškus, netikėtus proto
+nušvitimus. 
+     
+Nepamirškime, kad vertinami yra tik dalyvių atsakymai, o atsakymą kiekvienoje užduotyje reikia
+pasirinkti (ir kuo greičiau!) iš penkių duotųjų. Ar tikrai teisingas tas
+atsakymas, kuris iš pirmo žvilgsnio atrodo labiausiai tikėtinas? Ar tas
+uždavinys tikrai toks sunkus, kad verčiau jį praleisti? O gal tereikia
+pastebėti kokią smulkmeną, savaime nekrintančią į akis, ir uždavinys iš
+karto išsispręs? Ar pasėdėti prie šio uždavinio dar kelias minutes? O gal
+verčiau rizikuoti ir iš karto spėti labiausiai patinkantį atsakymą? Juk jei
+pataikysi -- priklausomai nuo uždavinio sunkumo gausi 3, 4 ar 5 taškus,
+tačiau jei rizika nepasiteisins ir prašausi pro šalį -- bus blogiau nei jei
+išvis jokio atsakymo nežymėtum. Mat už klaidingą atsakymą iš bendros taškų
+sumos su šaltu buhalteriniu tikslumu atimama ketvirtis to, kas būtų pridėta
+atsakius teisingai. (Visgi pastebėsime, kad į minusą nusiristi
+\emph{Kengūros} konkurse neįmanoma, nes kiekvienam mokiniui vien už
+dalyvavimą dosniai skiriama 30 taškų.)
+     
+Su panašiais klausimais konkurso dalyviai susiduria dažnai, nes
+\emph{Kengūros} uždavinių sprendimai būna gana netikėti, kviečiantys
+sprendėją padaryti atradimą -- peršokti per standartinio mąstymo barikadas.
+Taip milijonai sprendėjų perpranta, kokia šmaikšti  gali būti užduotis, kaip iš
+kelių minčių bei paprastų sakinių jau gali sukristi
+jos sprendimas --  štai jau, regis, net gali atskirti, už kurių sąlygos
+žodžių ar skaičių slapstosi tikrasis atsakymas.
+     
+Dabar stabtelėkime akimirkai ir paklausykime kelių žodžių iš
+\emph{Kengūros} gelmių Lietuvoje ir visame pasaulyje. Kas gi mums tą
+kasmetį viesulą siunčia?
+     
+Kaip nesunku nuspėti, konkurso idėja gimė ir labai sėkmingai rutuliojosi
+Australijoje, o Europoje ji ėmė sklisti iš Prancūzijos. Prancūzai suteikė
+\emph{Kengūrai} ir jos dabartinę organizacinę išvaizdą. Lietuvoje prie
+\emph{Kengūros} konkurso ištakų stovėjo ir labai daug nuveikė įvairios
+institucijos, mokyklos ir kitos savo gyvenimą švietimui paskyrusios
+organizacijos bei entuziastingi pradininkai. 
+Tarp sumaniai į Lietuvą \emph{Kengūros} konkursą viliojusių institucijų
+pirmiausiai minėtini Švietimo ir mokslo ministerija, Vilniaus universiteto
+Matematikos ir informatikos institutas bei Matematikos ir informatikos
+fakultetas. 
+Nuo 2016 m. rugsėjo lietuviškoji \emph{Kengūra} glaudžiasi po
+Lietuvos matematikų draugijos sparnu.
+Kalbant šiek tiek žaismingiau,
+būtent jų galingomis pastangomis grakštaus bei efektyvaus mokymo simboliu
+tapęs gyvūnas su visa savo mokslo kariauna ir buvo atviliotas ir, drįstame
+tai sakyti nedvejodami, negrįžtamai atšuoliavo pas mus bei įsikūrė Nemuno
+žemėje.
+          
+O šiaip, \emph{Kengūrai} nuolat mūsų gyvenime randantis, viskas vyksta kaip
+visur, kur rimtai dirbama. Ir \emph{Kengūros} ratas sukasi kiaurus metus --
+net vasaromis, kai, atrodytų, tik atostogos, geriausiai konkurse
+pasirodžiusieji mokiniai kviečiami į stovyklas, kur gali dalyvauti tiek
+sportiniuose, tiek matematiniuose, tiek
+kituose smagiuose renginiuose. O rudenį ekspertai, suvažiavę iš viso
+pasaulio, renka uždavinius konkursui, per žiemą jie verčiami į dešimtis
+kalbų, adaptuojami ir pritaikomi taip, jog kartais atrodo, kad jie
+sugalvoti kaimyniniame miestelyje. Vien Lietuvoje \emph{Kengūra} kalba
+keturiomis kalbomis: lietuvių, lenkų, rusų ir anglų.
+     
+Tik taip, nepastebimai bei niekada nenuleidžiant rankų, ir gali užgimti konkursas,
+keičiantis jo dalyvių požiūrį į matematiką. Tik tai ir teparodo, kaip
+moderniam žmogui duoti deramą pasirengimą dar modernesnei mus užgriūnančiai
+ateičiai, į kurią jam lemta žengti.
+     
+Šis kelias neišvengiamas -- juo teks eiti. Eiti bus įdomu, kartais šiek
+tiek baugu, gal net sunku -- bet jo vingiai įveikiami, o jį pasirinkusiųjų
+užmojai stebinantys.
+     
+Kas gi mūsų laukia kelionėje? Šioje knygelėje pateikti konkurso uždaviniai,
+pro kuriuos #6 metų #3 dieną keliavo ir gausiai sprendė #4 klasių
+(\emph{#5} amžiaus grupė) mokiniai. Be to, norintys pasitikrinti, ar jie
+tikrai gerai sprendė, panūdusieji pasižiūrėti, kaip dar galima spręsti
+šiuos uždavinius arba kaip juos pajėgia spręsti jų pateikėjai, knygelėje
+ras ir visų uždavinių atsakymus su sprendimais.
+     
+Kaip jau seniai visi žino, norint rasti ar pasirinkti teisingą atsakymą iš
+penkių duotųjų, ne visada būtina griežtai išspręsti uždavinį ar kaip kitaip
+perkratyti visą pasaulio išmintį, todėl ir knygelėje pateikiami kai kurių
+uždavinių ne tik griežti matematiniai sprendimai (jie žymimi
+ženklu~\textbf{!}), bet ir jų \emph{kengūriniai} sprendimai, paaiškinantys,
+kaip
+nusigauti iki teisingo atsakymo, uždavinio iki galo taip ir neišsprendus
+(tokie sprendimai-nusigavimai pažymėti ženklu \textbf{ ?}). Kai vienokių ar
+kitokių sprendimo būdų yra daugiau nei vienas, jie žymimi ženklais \textbf{??},
+\textbf{!!}, \textbf{!!!} ir pan. Nors konkurse-žaidime pakanka
+klaustuku pažymėto sprendimo, tikimės, kad matematikos galvosūkių sportu
+užsikrėtusiam skaitytojui nebus svetimas ir azartas išsiaiškinti viską iki
+galo bei pereiti uždavinio lynu be penkių atsakymų apsaugos.
+     
+Tad kviečiame keliauti ir pavaikštinėti juo kartu su \emph{Kengūra} --
+išmėginti turimas jėgas bei žadinti savo kūrybines galias, kurių jūs,
+mielas skaitytojau, šitiek daug turite!
+\vfill
+\hfill
+\begin{tabular}{r}
+Organizatoriai \\ 
+\end{tabular} 
+\vfill
+\vfill
+\vfill
+\vfill
+%Aivaras Novikas Romualdas Kašuba
+\markboth{}{}
+}
+
+\newcommand\pratarmeE{
+\chapter{Pratarmė} 
+
+\pagestyle{headings}
+\setlength{\parindent}{24pt}
+\setlength{\parskip}{0pt}
+\thispagestyle{empty}
+\mbox{}\indent 
+Matematikas mokytojas Peter O'Halloran iš Sidnėjaus aštuntajame praėjusio 
+amžiaus dešimtmetyje pradėjo organizuoti matematikos konkursą australų 
+mokiniams, kuris sulaukė stulbinančio pasisekimo. Konkurso užduotys buvo 
+testinės (reikėjo pasirinkti vieną iš keleto pateiktų atsakymų), o dalyvių 
+atsakymai tikrinami  kompiuteriais. 
+ 
+1991 m. prancūzų pedagogų Deledicq šeima, įkvėpti australų sėkmės, suorganizavo 
+panašų matematikos konkursą \emph{Kengūra}, kuriame pirmaisiais metais dalyvavo 
+per 120 tūkstančių mokinių iš Prancūzijos. 1994 m. šis konkursas prasiplėtė 
+į dar 7 šalis: Baltarusiją, Ispaniją, Lenkiją, Olandiją, Rumuniją, Rusiją  
+ir Vengriją. 1994 m. įsteigta asociacija „Kengūra be sienų“ vienija konkurso 
+\emph{Kengūra} šalis-nares. Kasmet vykstančiame asociacijai priklausančių šalių 
+atstovų suvažiavime parenkamos konkurso užduotys ir sprendžiami organizaciniai 
+klausimai. 
+
+Nuo 2011 m. konkurse visame pasaulyje kasmet dalyvauja per 6 milijonai mokinių, 
+o asociacija „Kengūra be sienų“ vienija per 60 šalių. Daugiau informacijos apie 
+matematikos konkursą \emph{Kengūra} galima rasti čia:
+
+\url{http://aksf.org/}
+
+Lietuvoje konkursas \emph{Kengūra} pradėtas rengti nuo 1995 m. Konkursas organizuojamas 
+6 amžiaus grupėms: \emph{Nykštukas} (1--2 kl.), \emph{Mažylis} (3--4 kl.),
+\emph{Bičiulis} (5--6 kl.), \emph{Kadetas} (7--8 kl.), \emph{Junioras} (9--10
+kl.) ir \emph{Senjoras} (11--12 kl.).  
+
+Konkursas kasmet vyksta trečiąjį kovo ketvirtadienį. Kiekvienas konkurso dalyvis gauna 
+užduočių lapą ir dalyvio kortelę, kurioje pažymi atsakymus. Visų dalyvių kortelės 
+nuskenuojamos ir apdorojamos kompiuteriu. Kasmet (nuo 2000 m.) paruošiamos uždavinių 
+sprendimo knygelės, kurias galima rasti čia:
+
+\url{http://kengura.lt/}
+
+2015 m. atsirado nauja \emph{Kengūros} dalyvių grupė nebemokiniams -- \emph{Ekspertas}. Šiai grupei 
+konkursas buvo organizuotas „online“ režimu. 
+%Pirmajame konkurse varžėsi 47 dalyviai. Absoliučiai visus uždavinius išsprendė trys 
+%dalyviai: Dainius Dzindzalieta, Eduardas Juška ir Ignas Urbonavičius. Sveikiname!    
+
+Konkurso metu sprendžiama 30 uždavinių, kurių sprendimas vertinamas taip: jei 
+uždavinio atsakymas yra teisingas, skiriami visi prie jo 
+sąlygos nurodyti taškai (3, 4 arba 5); jei atsakymas neteisingas -- 
+atimamas ketvirtadalis uždaviniui numatytų taškų; už nepažymėtą 
+atsakymą taškai neskiriami (0 taškų). Be to, kiekvienas dalyvis konkurso pradžioje turi 
+30 taškų (taigi net visų uždavinių atsakymus pažymėjus neteisingai, 
+iš viso surenkama 0 taškų).  
+
+Šioje knygelėje ženklu \textbf{!} pažymėti griežti matematiniai sprendimai. Tačiau norint 
+pasirinkti teisingą atsakymo variantą ne visada reikia griežto matematinio sprendimo. 
+Kartais pakanka paaiškinti, kodėl kiti nurodyti atsakymo variantai netinka. Tokie 
+sprendimai pažymėti ženklu~\textbf{?}. Kai vienų ar kitų sprendimų pateikiama daugiau, 
+jie žymimi ženklais \textbf{??}, \textbf{!!}, \textbf{!!!} ir pan. Nors
+konkurse pakanka net ir klaustuku pažymėto sprendimo, 
+tikimės, kad skaitytojas nepatingės išsiaiškinti viską iki galo.
+
+
+Daugiau informacijos apie \emph{Eksperto} grupę galima rasti čia:
+
+\url{http://www.ekspertas.kengura.lt/}
+
+Viliamės, kad \emph{Eksperto} grupė gausės -- juk loginis mąstymas svarbus ne vien mokiniams, 
+jis svarbus žmogui visą gyvenimą. Nestandartinių uždavinių sprendimas leidžia  
+pasitikrinti ir pagilinti matematinius įgūdžius, ugdyti matematinę kultūrą.
+
+
+\vfill
+\hfill
+\begin{tabular}{r}
+Organizatoriai \\ 
+\end{tabular} 
+%Aivaras Novikas Romualdas Kašuba
+\markboth{}{}
+}
+
+\newcommand\bestof[4]{
+  \setlength{\parindent}{0pt} \setlength{\parskip}{0pt}
+  \noindent
+  \vbox{
+    \begin{center}
+      {\large #1, #2 klasė, 50 geriausiųjų}
+    \end{center}
+    \begin{Spacing}{#4}
+      \input{./bestof/bestof#3}
+    \end{Spacing}
+  }
+  \newpage
+}
+
+\def\kortele{
+  \newpage
+  \phantomsection\addcontentsline{toc}{chapter}{Dalyvio kortelės pavyzdys}%
+  \includepdf[pages=-]{kortele.pdf}%
+}

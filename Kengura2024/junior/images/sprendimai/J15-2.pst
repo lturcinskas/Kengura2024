@@ -1,0 +1,19 @@
+{\psset{unit=3mm}\psset{linejoin=1,linecap=1,linewidth=0.7pt}
+\pspicture(-1.7,-1.2)(12.7,11.23)
+%\psframe(-1.7,-1.2)(12.7,11.23)
+
+\pspolygon(0,0)(11,0)(!5.5 5.5 3 sqrt mul)
+\psline(!5 3 3 sqrt mul)(!6.5 4.5 3 sqrt mul)
+\psline(!5 3 3 sqrt mul)(!3 3 3 sqrt mul)
+\psline(!5 3 3 sqrt mul)(!8 0)
+
+\uput[90](!5.5 5.5 3 sqrt mul){$A$}
+\uput[210](0,0){$B$}
+\uput[330](11,0){$C$}
+\uput[0](!5 3 3 sqrt mul){$P$}
+
+\uput{0.2}[150](!5.75 3.75 3 sqrt mul){$3$}
+\uput{0.2}[270](!4 3 3 sqrt mul){$2$}
+\uput{0.2}[30](!6.5 1.5 3 sqrt mul){$6$}
+
+\endpspicture}

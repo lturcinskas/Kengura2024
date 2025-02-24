@@ -1,0 +1,22 @@
+\documentclass[crop,tikz]{standalone}% 'crop' is the default for v1.0, before it was 'preview'
+%\usetikzlibrary{...}% tikz package already loaded by 'tikz' option
+\usepackage{tkz-euclide}
+\begin{document}
+	\begin{tikzpicture}[scale=0.7]
+		\tkzDefPoint(0,0){O}
+		\tkzDefPoint(1,2){P}
+		\tkzDefPoint(2,1){Q}
+		\tkzLabelPoint[above right](P){$P (m,n)$}
+		\tkzLabelPoint[right](Q){$Q (n,m)$}
+		\tkzLabelPoint[below left](O){$O$}
+		\tkzDrawPoints(O,P,Q)
+		\tkzDrawPolygon[fill=gray!30](O,P,Q)
+		\tkzDrawSegment[thick](O,P)
+		\tkzDrawSegment[thick](O,Q)
+		\tkzDrawSegment[thick](P,Q)
+		\tkzInit[xmin=-1,xmax=3,ymin=-1,ymax=2]
+		\tkzDrawX[>=angle 60, noticks]
+		\tkzDrawY[>=angle 60,noticks]
+		
+	\end{tikzpicture}
+\end{document}

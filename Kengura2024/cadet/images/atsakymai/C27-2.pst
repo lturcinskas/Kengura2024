@@ -1,0 +1,29 @@
+{\psset{unit=11mm}\psset{linejoin=1,linecap=1,linewidth=0.7pt}
+\pspicture(-0.4,-0.4)(4.4,3.4)
+
+\multido{\n=0+1}{5}{\psline[linewidth=0.5pt,linecolor=black!30](\n,-0.4)(\n,3.4)}
+\multido{\n=0+1}{4}{\psline[linewidth=0.5pt,linecolor=black!30](-0.4,\n)(4.4,\n)}
+
+\pspolygon(1,3)(0,0)(3,3)(4,0)
+\psline(1,3)(2,0)(3,3)
+
+{\psset{linejoin=0,linecap=0,linewidth=2pt}
+\psarc(0,0){1.1}{(3,3)}{(1,3)}
+\psarc(2,0){1.1}{(1,3)}{(-1,3)}
+\psarc(4,0){1.1}{(-1,3)}{(-3,3)}
+}
+
+\uput{0.7}[!3 arctan 1 arctan add 2 div](0,0){\smash{$\alpha$}}
+\uput{0.7}[90](2,0){\smash{$\beta$}}
+\uput{0.7}[!180 3 arctan 1 arctan add 2 div sub](4,0){\smash{$\gamma$}}
+
+
+{\psset{linejoin=0,linecap=0,linewidth=2pt}
+\psarc(1,3){1.1}{(-1,-3)}{(1,-3)}
+\psarc(1,3){0.95}{(1,-3)}{(3,-3)}
+}
+\uput{0.7}[270](1,3){\smash{$\beta$}}
+\uput{0.7}[!-8 3 arctan 1 arctan add 2 div sub](1,3){\smash{$\gamma$}}
+\psline[linejoin=0](1.9,2.1)(1.8,2)(1.9,1.9)
+
+\endpspicture}

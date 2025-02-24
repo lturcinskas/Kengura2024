@@ -1,0 +1,616 @@
+\usepackage{graphicx}
+\usepackage{amsfonts}
+%\usepackage{graphicx}
+\graphicspath{ {./images/}{./images/build/}}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\DeclareGraphicsExtensions{.pdf,.PDF,.png,.PNG,.eps} % prefer pdf to png
+\usepackage[utf8x]{inputenc}  
+%\usepackage[L7x]{fontenc}     
+\usepackage[T1,T2A]{fontenc}
+\usepackage[lithuanian,polish,russian]{babel}
+%\usepackage{setspace}
+%\usepackage{auto-pst-pdf}
+\usepackage{anyfontsize}
+
+\usepackage[abs]{overpic}
+\usepackage[none]{hyphenat}
+
+\setlength{\parindent}{0pt}
+
+%page geometry
+\setlrmarginsandblock{20pt}{40pt}{*}
+\setulmarginsandblock{30pt}{20pt}{*}
+\setheadfoot{0pt}{0pt}
+\setheaderspaces{25pt}{*}{*}
+\checkandfixthelayout[fixed]
+
+
+
+%%%%%%Paveiksliukai tekste
+\newcommand{\vcenteredinclude}[2][1]{\begingroup
+\setbox0=\hbox{\includegraphics[scale=#1]{#2}}%
+\parbox{\wd0}{\box0}\endgroup}
+
+%minus
+\newcommand{\minus}{\scalebox{0.75}[1.0]{$-$}}
+
+%\def\blm{--\hskip-.25em--}
+\def\blm{-\hskip-.15em-}
+
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+
+%Compatibility with polish
+\newcommand{\mat}[1]{$#1$}
+\newcommand{\Mat}[1]{$$#1$$}
+\newcommand{\luka}[1][\,]{\ensuremath{\mathord{#1}}}
+\newcommand*{\koma}[1][,]{\ensuremath{\mathord{#1}}}
+\newcommand{\rysunek}[2]{\includegraphics[scale=#1]{#2}}
+\newcommand{\unit}[2][1]{\ensuremath{\mathord{#1 \: \mathrm{#2}}}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%--- Point annoucements ---%%%%%%%%%%%%%%%%%%%%%%%
+
+%pieces for problem numbers and answers
+
+\newcommand\pID[1]{\textbf{#1.\unskip}\unskip}
+
+\newcommand\answer[5]{\textbf{A)}~#1 \quad \textbf{B)}~#2 \quad
+\textbf{C)}~#3 \quad\textbf{D)}~#4 \quad\textbf{E)}~#5}
+\newcommand\toightanswer[5]{\textbf{A)}#1 \textbf{B)}#2 \textbf{C)}#3 \textbf{D)}#4 \textbf{E)}#5}
+\newcommand\toianswer[5]{\textbf{A)} #1 \ \ \textbf{B)} #2 \ \ \textbf{C)} #3 \ \
+\textbf{D)} #4 \ \ \textbf{E)} #5}
+\newcommand\toiganswer[5]{\textbf{A)}#1 \ \textbf{B)}#2 \ \textbf{C)}#3 \ \textbf{D)}#4 \ \textbf{E)}#5}
+\newcommand\fillanswer[5]{\textbf{A)}~#1 \hfill \textbf{B)}~#2 \hfill\textbf{C)}~#3 
+\hfill\textbf{D)}~#4 \hfill\textbf{E)}~#5}
+%\newcommand\fanswer[5]{\textbf{A)}#1\hfill\textbf{B)}#2\hfill\textbf{C)}#3\hfill\textbf{D)}#4\hfill\textbf{E)}#5}
+%\newcommand\hanswer[6][-10pt]{\noindent\textbf{A)}\hspace{#1}#2\hfill\textbf{B)}\hspace{#1}#3\hfill\textbf{C)}\hspace{#1}#4\hfill\textbf{D)}\hspace{#1}#5\hfill\textbf{E)}\hspace{#1}#6}
+%\newcommand\hanswer[5]{\textbf{A)}\hspace{-10pt}#1\textbf{B)}\hspace{-10pt}#2\textbf{C)}\hspace{-10pt}#3\textbf{D)}\hspace{-10pt}#4\textbf{E)}\hspace{-10pt}#5}
+%\newcommand\ranswer[5]{\rPone\textbf{A)}#1\hfill\textbf{B)}#2\hfill\textbf{C)}#3\hfill\textbf{D)}#4\hfill\textbf{E)}#5}
+
+%include 5 graphics with variable scale
+\newcommand\granswer[6][1]{
+\fillanswer
+{\includegraphics[scale=#1]{#2}}
+{\includegraphics[scale=#1]{#3}}
+{\includegraphics[scale=#1]{#4}}
+{\includegraphics[scale=#1]{#5}}
+{\includegraphics[scale=#1]{#6}}
+}
+
+%point announcements
+\newcommand\pointsen[1]{
+\vspace{5pt}
+\noindent\textbf{Questions for #1 points}}
+
+\newcommand\pointslt[1]{
+\vspace{5pt}
+\noindent\textbf{Klausimai po #1 taškus}}
+
+\newcommand\pointspl[1]{
+\vspace{5pt}
+\ifnum#1=5
+\noindent\textbf{Pytania po #1 punktów}
+\else
+\noindent\textbf{Pytania po #1 punkty}
+\fi}
+
+\newcommand\pointsru[1]{
+\vspace{5pt}
+\ifnum#1=5
+\noindent\textbf{Задачи, оцениваемые в #1 очков}
+\else
+\noindent\textbf{Задачи, оцениваемые в #1 очка}
+\fi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%--- Greetings ---%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\kyear{\the\year}
+
+\def\klt{lt}\def\kpl{pl}\def\kru{ru}\def\ken{en}
+
+\def\ktitle#1{
+\def\tmp{#1}
+\ifx\tmp\klt
+\unskip KENGŪRA
+\else\ifx\tmp\kpl
+\unskip KANGUR
+\else\ifx\tmp\kru
+\unskip КЕНГУРУ
+\else
+\unskip KANGAROO
+\fi\fi\fi
+}
+
+\def\ktime#1{
+\ifnum#1=1
+\unskip 50
+\else
+\unskip 75
+\fi
+}
+
+\def\kltgroup#1{
+\ifnum#1=1
+\unskip Nykštukas
+\else\ifnum#1=2
+\unskip Mažylis
+\else\ifnum#1=3
+\unskip Bičiulis
+\else\ifnum#1=4
+\unskip Kadetas
+\else\ifnum#1=5
+\unskip Junioras
+\else\ifnum#1=6	
+\unskip Senjoras
+\else\ifnum#1=7
+\unskip Ekspertas
+\fi\fi\fi\fi\fi\fi\fi
+}
+
+\def\kengroup#1{
+\ifnum#1=1
+\unskip Nipper
+\else\ifnum#1=2
+\unskip Minor
+\else\ifnum#1=3
+\unskip Benjamin
+\else\ifnum#1=4
+\unskip Cadet
+\else\ifnum#1=5
+\unskip Junior
+\else\ifnum#1=6
+\unskip Student
+\else\ifnum#1=7
+\unskip Expert
+\fi\fi\fi\fi\fi\fi\fi
+}
+
+\def\kplgroup#1{
+\ifnum#1=1
+\unskip Żaczek
+\else\ifnum#1=2
+\unskip Maluch
+\else\ifnum#1=3
+\unskip Beniamin
+\else\ifnum#1=4
+\unskip Kadet
+\else\ifnum#1=5
+\unskip Junior
+\else\ifnum#1=6
+\unskip Student
+\fi\fi\fi\fi\fi\fi
+}
+
+\def\krugroup#1{
+\ifnum#1=1
+\unskip Непоседа
+\else\ifnum#1=2
+\unskip Малыш
+\else\ifnum#1=3
+\unskip Баловник
+\else\ifnum#1=4
+\unskip Кадет
+\else\ifnum#1=5
+\unskip Юниор
+\else\ifnum#1=6
+\unskip Сеньор
+\fi\fi\fi\fi\fi\fi
+}
+
+\newcommand\kgroup[2]{
+\def\tmp{#1}
+\ifx\tmp\klt
+\unskip \kltgroup{#2}
+\else\ifx\tmp\kpl
+\unskip \kplgroup{#2}
+\else\ifx\tmp\kru
+\unskip \krugroup{#2}
+\else
+\unskip \kengroup{#2}
+\fi\fi\fi
+}
+
+\def\kage#1{
+\ifnum#1=1
+\unskip 1\blm2
+\else\ifnum#1=2
+\unskip 3\blm4
+\else\ifnum#1=3
+\unskip 5\blm6
+\else\ifnum#1=4
+\unskip 7\blm8
+\else\ifnum#1=5
+\unskip 9\blm10
+\else\ifnum#1=6
+\unskip 11\blm12
+\else\ifnum#1=7
+\unskip 13\blm \ 
+\fi\fi\fi\fi\fi\fi\fi
+}
+
+\newcommand\kclass[2]{
+\def\tmp{#1}
+\ifx\tmp\klt
+\unskip\mbox{\,\kage{#2}klasės}
+\else\ifx\tmp\kpl
+\unskip\mbox{\,Klasy \kage{#2}}
+\else\ifx\tmp\kru
+\unskip\mbox{\kage{#2}классы}
+\else
+\unskip\mbox{\kage{#2}grades}
+\fi\fi\fi
+}
+
+\newcommand\krules[2]{
+\def\tmp{#1}
+\ifx\tmp\klt%
+\ifnum#2=1
+\unskip Konkurso trukmė -- \ktime{#2}minučių\newline
+Konkurso metu negalima naudotis skaičiuokliais
+\else
+\unskip Konkurso trukmė -- \ktime{#2}minutės\newline
+Konkurso metu negalima naudotis skaičiuokliais
+\fi
+\else\ifx\tmp\kpl%
+\unskip Czas trwania konkursu: \ktime{#2}min\newline
+Używać kalkulatorów nie wolno!
+\else\ifx\tmp\kru%
+\unskip Продолжительность работы \ktime{#2}минут\newline
+Пользоваться калькуляторами запрещается
+\else%
+\unskip Time allowed: \ktime{#2}minutes\newline
+Calculators are not permitted
+\fi\fi\fi
+}
+
+\newcommand\kgroupwidth[2]{
+\ifnum#2=1
+%\if#1\klt%
+%120pt
+%\else
+75pt
+%\fi
+\else
+67pt
+\fi
+}
+
+%First parameter is language and takes values en lt pl ru
+%Second parameter is age group and goes form 1 to 6 (PreEcolier to Senior)
+%\newlength{\slap}
+
+\newcommand\greetingold[2]{
+\setlength{\fboxrule}{1pt}
+%\settowidth{\slap}{\textbf{{\Large \ignorespaces\kgroup{#1}{#2}}}}
+\sponsors
+
+\bigskip
+\vspace{15pt}
+\begin{center}
+  %\Huge{\textbf{ \ktitle{#1} \kyear}\ \ \ }
+  {\textbf{\fontsize{25pt}{30pt}\selectfont \ktitle{#1} \kyear}\ \ \ }
+\end{center}
+
+\vspace{-55pt}
+%\fbox{\includegraphics[scale=0.5]{../other/kengurazenkle}} \hfill
+\includegraphics[scale=0.6]{../other/kengura_official} \hfill
+\fbox{\includegraphics[scale=0.5]{../other/#1#2}} \hspace{1pt}
+
+\bigskip
+
+\begin{minipage}[t]{270pt}
+  \vspace{0pt}
+  \small{\emph{\ignorespaces\krules{#1}{#2}}}
+\end{minipage}
+\hfill
+%\begin{minipage}[t]{67pt}
+\begin{minipage}[t]{\kgroupwidth{#1}{#2}}
+  \vspace{-3pt}
+  \mbox{\textbf{{\fontsize{14pt}{12pt}\selectfont \ignorespaces\kgroup{#1}{#2}}}}
+%  \mbox{\textbf{{\Large \ignorespaces\kgroup{#1}{#2}}}}
+  \newline\textbf{\kclass{#1}{#2}}
+\end{minipage}
+\smallskip
+\hrule
+}
+
+\newcommand\greeting[2]{
+\setlength{\fboxrule}{1pt}
+%\settowidth{\slap}{\textbf{{\Large \ignorespaces\kgroup{#1}{#2}}}}
+\sponsors
+
+\bigskip
+\vspace{20pt}
+\begin{center}
+%\Huge{\textbf{ \ktitle{#1} \kyear}\ \ \ }
+{\textbf{\fontsize{25pt}{30pt}\selectfont \ktitle{#1} \kyear} \ \ \ } 
+\end{center}
+
+\vspace{-60pt}
+%\fbox{\includegraphics[scale=0.5]{../other/kengurazenkle}} \hfill
+\includegraphics[scale=0.6]{../other/kengura_official} \hfill
+\fbox{\includegraphics[scale=0.5]{../other/#1#2}} \hspace{1pt}
+
+\bigskip
+
+\begin{minipage}[t]{220pt}
+  \vspace{-20pt}
+  \emph{\fontsize{10pt}{8pt}\selectfont\ignorespaces\krules{#1}{#2}}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{75pt}
+\vspace{-25pt}
+%\begin{flushright}
+\hfill\textbf{{\fontsize{12pt}{10pt}\selectfont\ignorespaces\kgroup{#1}{#2}}}
+%\end{flushright}
+\vspace{-12pt}
+%\begin{flushright}
+\hfill\textbf{\fontsize{12pt}{10pt}\selectfont\ignorespaces\kclass{#1}{#2}}
+%\end{flushright}
+\end{minipage}
+\hspace{0.1pt}
+\begin{minipage}[b]{69.35pt}
+\vspace{-14pt}
+\fbox{\includegraphics[scale=0.5]{../other/#1}}
+\end{minipage}
+\smallskip
+\hrule
+}
+
+\newcommand\greetinglt[2]{
+\setlength{\fboxrule}{1pt}
+%\settowidth{\slap}{\textbf{{\Large \ignorespaces\kgroup{#1}{#2}}}}
+\sponsors
+
+\bigskip
+\vspace{20pt}
+\begin{center}
+%\Huge{\textbf{ \ktitle{#1} \kyear}\ \ \ }
+{\textbf{\fontsize{25pt}{30pt}\selectfont \ktitle{#1} \kyear} \ \ \ } 
+\end{center}
+
+\vspace{-60pt}
+%\fbox{\includegraphics[scale=0.5]{../other/kengurazenkle}} \hfill
+\includegraphics[scale=0.6]{../other/kengura_official} \hfill
+\fbox{\includegraphics[scale=0.5]{../other/#1#2}} \hspace{1pt}
+
+\bigskip
+
+\begin{minipage}[t]{220pt}
+  \vspace{-20pt}
+  \emph{\fontsize{10pt}{8pt}\selectfont\ignorespaces\krules{#1}{#2}}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{71pt}
+\vspace{0pt}
+\begin{flushright}
+  \textbf{{\fontsize{12pt}{10pt}\selectfont\ignorespaces\kgroup{#1}{#2}}}
+\end{flushright}
+\vspace{-28pt}
+\begin{flushright}
+  \textbf{\kclass{#1}{#2}}
+\end{flushright}
+
+\end{minipage}
+\hspace{2pt}
+\begin{minipage}[t]{69.35pt}
+\vspace{-42pt}
+\fbox{\includegraphics[scale=0.5]{../other/#1}}
+\end{minipage}
+\smallskip
+\hrule
+}
+
+\newcommand\greetingru[2]{
+\setlength{\fboxrule}{1pt}
+%\settowidth{\slap}{\textbf{{\Large \ignorespaces\kgroup{#1}{#2}}}}
+\sponsors
+
+\bigskip
+\vspace{20pt}
+\begin{center}
+%\Huge{\textbf{ \ktitle{#1} \kyear}\ \ \ }
+{\textbf{\fontsize{25pt}{30pt}\selectfont \ktitle{#1} \kyear} \ \ \ } 
+\end{center}
+
+\vspace{-60pt}
+%\fbox{\includegraphics[scale=0.5]{../other/kengurazenkle}} \hfill
+\includegraphics[scale=0.6]{../other/kengura_official} \hfill
+\fbox{\includegraphics[scale=0.5]{../other/#1#2}} \hspace{1pt}
+
+\bigskip
+
+\begin{minipage}[t]{220pt}
+  \vspace{-20pt}
+  \emph{\fontsize{10pt}{8pt}\selectfont\ignorespaces\krules{#1}{#2}}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{71pt}
+\vspace{0pt}
+\begin{flushright}
+  \textbf{{\fontsize{12pt}{10pt}\selectfont\ignorespaces\kgroup{#1}{#2}}}
+\end{flushright}
+\vspace{-28pt}
+\begin{flushright}
+  \textbf{\kclass{#1}{#2}}
+\end{flushright}
+
+\end{minipage}
+\hspace{2pt}
+\begin{minipage}[t]{69.35pt}
+\vspace{-36pt}
+\fbox{\includegraphics[scale=0.5]{../other/#1}}
+\end{minipage}
+\smallskip
+\hrule
+}
+
+\def\sponsors{
+  \emph{{\fontsize{10pt}{12pt}\selectfont
+Lietuvos Respublikos švietimo ir mokslo ministerija \hfill
+Vilniaus universitetas\newline
+\textsl{Kengūros} konkurso organizavimo komitetas\hfill
+Lietuvos matematikų draugija}}}
+
+%\def\goodbye{ {\small{\copyright\ \the\year\emph{ Kengūros konkurso organizavimo
+%komitetas}}}}
+\def\goodbye{ {\fontsize{10pt}{12pt}\selectfont
+\copyright\ \the\year\emph{ Kengūros konkurso organizavimo
+komitetas}}}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%--- Problem Layouts ---%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newlength{\gnat}
+\newlength{\noind}
+\setlength{\noind}{18pt}
+\newlength{\ktextlength}
+\setlength{\ktextlength}{\textwidth}
+\addtolength{\ktextlength}{-\noind}
+
+%problem layouts: simple text with no fill in the end
+\newcommand\ktextnofill[2]{
+  \settowidth{\gnat}{\textbf{#1.}}
+  \begin{minipage}[t]{\noind}
+    \vspace{0pt}
+    \mbox{}
+  \end{minipage}
+  \begin{minipage}[t]{\ktextlength}
+    \vspace{0pt}
+    \hspace{-4pt}\hspace{-\gnat}\textbf{#1.}\hspace{4pt}\ignorespaces#2
+  \end{minipage}
+}
+
+
+%problem layouts: simple text with fill in the end
+\newcommand\ktext[2]{
+  \ktextnofill{#1}{#2}
+  \vfill
+}
+
+%problem layouts: simple picture with variable image height and no fill
+\newlength{\figlength}
+\newlength{\scaledfig}
+\newlength{\textlength}
+
+\newcommand\kpicnofill[6][0pt]{
+  \settowidth{\gnat}{\textbf{#2.}}
+
+  \setlength{\figlength}{#5}
+  \setlength{\scaledfig}{#6\figlength}
+  \setlength{\textlength}{\ktextlength}
+  \addtolength{\textlength}{-\scaledfig}
+
+  \noindent
+  \begin{minipage}[t]{18pt}
+    \vspace{0pt}
+    \mbox{}
+  \end{minipage}
+  \begin{minipage}[t]{\textlength}
+    \vspace{0pt}
+    \hspace{-4pt}\hspace{-\gnat}\textbf{#2.}\hspace{4pt}\ignorespaces#3
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{\scaledfig}
+    \vspace{#1}
+    \hfill
+    \includegraphics[scale=#6]{#4}
+  \end{minipage}
+}
+
+%problem layouts: simple picture with variable image height and fill
+\newcommand\kpic[6][0pt]{
+  \settowidth{\gnat}{\textbf{#2.}}
+
+  \setlength{\figlength}{#5}
+  \setlength{\scaledfig}{#6\figlength}
+  \setlength{\textlength}{\ktextlength}
+  \addtolength{\textlength}{-\scaledfig}
+
+  \noindent
+  \begin{minipage}[t]{18pt}
+    \vspace{0pt}
+    \mbox{}
+  \end{minipage}
+  \begin{minipage}[t]{\textlength}
+    \vspace{0pt}
+    \hspace{-4pt}\hspace{-\gnat}\textbf{#2.}\hspace{4pt}\ignorespaces#3
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{\scaledfig}
+    \vspace{#1}
+    \hfill
+    \includegraphics[scale=#6]{#4}
+  \end{minipage}
+  \vfill
+}
+
+%problem layouts: fake ktext for out of box answers
+\newcommand\kvoid[1]{
+  \begin{minipage}[t]{17pt}
+    \vspace{0pt}
+    \mbox{}
+  \end{minipage}
+  \begin{minipage}[t]{\ktextlength}
+    \vspace{0pt}
+    #1
+  \end{minipage}
+}
+
+%problem layouts: custom parshape for inconvenient pictures
+\newcommand\kpicparshape[7][0pt]{
+  \settowidth{\gnat}{\textbf{#2.}}
+
+  \setlength{\figlength}{#5}
+  \setlength{\scaledfig}{#6\figlength}
+  \setlength{\textlength}{\ktextlength}
+  \addtolength{\textlength}{-\scaledfig}
+
+  \noindent
+  \begin{minipage}[t]{17pt}
+    \vspace{0pt}
+    \mbox{}
+  \end{minipage}
+  \begin{minipage}[t]{\textlength}
+    \vspace{0pt}
+    \hspace{-4pt}\hspace{-\gnat}\textbf{#2.}\hspace{4pt}\ignorespaces\begin{minipage}[t]{\ktextlength}
+       \parshape #7
+       #3
+  \end{minipage}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{\scaledfig}
+    \vspace{#1}
+    \hfill
+    \includegraphics[scale=#6]{#4}
+  \end{minipage}
+  \vfill
+}
+
+\newcommand\ktextparshape[3]{
+  \ktext{#1}{
+  \begin{minipage}[t]{\ktextlength}
+  \parshape #3
+    #2
+  \end{minipage}
+  }
+}
+
+\newcommand\kvoidparshape[2]{
+  \begin{minipage}[t]{17pt}
+  \vspace{0pt}
+  \mbox{}
+  \end{minipage}
+  \begin{minipage}[t]{\ktextlength}
+    \vspace{0pt}
+    \parshape #2
+    #1
+  \end{minipage}
+}

@@ -1,0 +1,63 @@
+{\psset{unit=3.5mm}\psset{linejoin=1,linewidth=1.4pt,dotsep=0.15}
+\pspicture(-1.1,-0.5)(18.1,10.5)
+%\psframe(-1.1,-0.5)(18.1,10.5)
+
+{\psset{linearc=0.5}
+
+\psline[linestyle=dotted](0,6)(17,6)
+\psline[linestyle=dashed](0,4)(5,4)(5,8)(17,8)
+\psline[linestyle=dotted](0,2)(17,2)
+\psline(3,9)(3,0)
+\psline(9,10)(9,0)
+\psline(13,10)(13,0)
+\psline[linestyle=dashed](11,7)(7,7)(7,4)(15,4)(15,0)
+}
+
+{\psset{fillstyle=solid,fillcolor=black!10,linewidth=1pt}
+\pscircle( 0,2){0.2}
+\pscircle( 0,4){0.2}
+\pscircle( 0,6){0.2}
+\pscircle( 3,0){0.2}
+\pscircle( 3,2){0.2}
+\pscircle( 3,4){0.2}
+\pscircle( 3,6){0.2}
+\pscircle( 3,9){0.2}
+\pscircle( 5,6){0.2}
+\pscircle( 7,6){0.2}
+\pscircle( 9,0){0.2}
+\pscircle( 9,2){0.2}
+\pscircle( 9,4){0.2}
+\pscircle( 9,6){0.2}
+\pscircle( 9,7){0.2}
+\pscircle( 9,8){0.2}
+\pscircle( 9,10){0.2}
+\pscircle(11,7){0.2}
+\pscircle(13,0){0.2}
+\pscircle(13,2){0.2}
+\pscircle(13,4){0.2}
+\pscircle(13,6){0.2}
+\pscircle(13,8){0.2}
+\pscircle(13,10){0.2}
+\pscircle(15,0){0.2}
+\pscircle(15,2){0.2}
+\pscircle(17,2){0.2}
+\pscircle(17,6){0.2}
+\pscircle(17,8){0.2}
+}
+
+\uput[l](0,6){$1$}
+\uput[r](17,6){$1$}
+\uput[l](0,4){$2$}
+\uput[r](17,8){$2$}
+\uput[l](0,2){$3$}
+\uput[r](17,2){$3$}
+\uput[l](3,9){$4$}
+\uput[l](3,0){$4$}
+\uput[l](9,10){$5$}
+\uput[l](9,0){$5$}
+\uput[l](13,10){$6$}
+\uput[l](13,0){$6$}
+\uput[r](11,7){$7$}
+\uput[l](15,0){$7$}
+
+\endpspicture}

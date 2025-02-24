@@ -1,0 +1,30 @@
+{\psset{unit=3.168mm}\psset{linewidth=0.7pt,linejoin=0,linecap=1,correctAngle=false,noCurrentPoint=true}
+\pspicture(-2.5,-2.3)(2.5,2.5)
+%\psframe(-2.5,-2.3)(2.5,2.5)
+
+\rput{180}(0,0){%
+\pscustom[linewidth=1.6mm]{%
+\psbezier(!90 cos 2 mul 90 sin 2 mul)(!90 cos 2 mul 180 cos 3 mul add 90 sin 2 mul 180 sin 3 mul add)(!210 cos 0.8 mul 120 cos add 210 sin 0.8 mul 120 sin add)(!210 cos 0.8 mul 210 sin 0.8 mul)%
+\psbezier(!210 cos 0.8 mul 210 sin 0.8 mul)(!210 cos 0.8 mul 300 cos add 210 sin 0.8 mul 300 sin add)(!330 cos 2 mul 240 cos 3 mul add 330 sin 2 mul 240 sin 3 mul add)(!330 cos 2 mul 330 sin 2 mul)%
+\psbezier(!330 cos 2 mul 330 sin 2 mul)(!330 cos 2 mul 60 cos 3 mul add 330 sin 2 mul 60 sin 3 mul add)(!90 cos 0.8 mul 0 cos add 90 sin 0.8 mul 0 sin add)(!90 cos 0.8 mul 90 sin 0.8 mul)%
+\psbezier(!90 cos 0.8 mul 90 sin 0.8 mul)(!90 cos 0.8 mul 180 cos add 90 sin 0.8 mul 180 sin add)(!210 cos 2 mul 120 cos 3 mul add 210 sin 2 mul 120 sin 3 mul add)(!210 cos 2 mul 210 sin 2 mul)%
+\psbezier(!210 cos 2 mul 210 sin 2 mul)(!210 cos 2 mul 300 cos 3 mul add 210 sin 2 mul 300 sin 3 mul add)(!330 cos 0.8 mul 240 cos add 330 sin 0.8 mul 240 sin add)(!330 cos 0.8 mul 330 sin 0.8 mul)%
+\psbezier(!330 cos 0.8 mul 330 sin 0.8 mul)(!330 cos 0.8 mul 60 cos add 330 sin 0.8 mul 60 sin add)(!90 cos 2 mul 0 cos 3 mul add 90 sin 2 mul 0 sin 3 mul add)(!90 cos 2 mul 90 sin 2 mul)%
+\closepath}%
+\pscustom[linewidth=1.2mm,linecolor=black!20]{%
+\psbezier(!90 cos 2 mul 90 sin 2 mul)(!90 cos 2 mul 180 cos 3 mul add 90 sin 2 mul 180 sin 3 mul add)(!210 cos 0.8 mul 120 cos add 210 sin 0.8 mul 120 sin add)(!210 cos 0.8 mul 210 sin 0.8 mul)%
+\psbezier(!210 cos 0.8 mul 210 sin 0.8 mul)(!210 cos 0.8 mul 300 cos add 210 sin 0.8 mul 300 sin add)(!330 cos 2 mul 240 cos 3 mul add 330 sin 2 mul 240 sin 3 mul add)(!330 cos 2 mul 330 sin 2 mul)%
+\psbezier(!330 cos 2 mul 330 sin 2 mul)(!330 cos 2 mul 60 cos 3 mul add 330 sin 2 mul 60 sin 3 mul add)(!90 cos 0.8 mul 0 cos add 90 sin 0.8 mul 0 sin add)(!90 cos 0.8 mul 90 sin 0.8 mul)%
+\psbezier(!90 cos 0.8 mul 90 sin 0.8 mul)(!90 cos 0.8 mul 180 cos add 90 sin 0.8 mul 180 sin add)(!210 cos 2 mul 120 cos 3 mul add 210 sin 2 mul 120 sin 3 mul add)(!210 cos 2 mul 210 sin 2 mul)%
+\psbezier(!210 cos 2 mul 210 sin 2 mul)(!210 cos 2 mul 300 cos 3 mul add 210 sin 2 mul 300 sin 3 mul add)(!330 cos 0.8 mul 240 cos add 330 sin 0.8 mul 240 sin add)(!330 cos 0.8 mul 330 sin 0.8 mul)%
+\psbezier(!330 cos 0.8 mul 330 sin 0.8 mul)(!330 cos 0.8 mul 60 cos add 330 sin 0.8 mul 60 sin add)(!90 cos 2 mul 0 cos 3 mul add 90 sin 2 mul 0 sin 3 mul add)(!90 cos 2 mul 90 sin 2 mul)%
+\closepath}%
+\psbezier[linewidth=1.6mm,linecap=0](!210 cos 0.8 mul 210 sin 0.8 mul)(!210 cos 0.8 mul 300 cos add 210 sin 0.8 mul 300 sin add)(!330 cos 2 mul 240 cos 3 mul add 330 sin 2 mul 240 sin 3 mul add)(!330 cos 2 mul 330 sin 2 mul)%
+\psbezier[linewidth=1.2mm,linecolor=black!20](!210 cos 0.8 mul 210 sin 0.8 mul)(!210 cos 0.8 mul 300 cos add 210 sin 0.8 mul 300 sin add)(!330 cos 2 mul 240 cos 3 mul add 330 sin 2 mul 240 sin 3 mul add)(!330 cos 2 mul 330 sin 2 mul)%
+\psbezier[linewidth=1.6mm,linecap=0](!330 cos 2 mul 330 sin 2 mul)(!330 cos 2 mul 60 cos 3 mul add 330 sin 2 mul 60 sin 3 mul add)(!90 cos 0.8 mul 0 cos add 90 sin 0.8 mul 0 sin add)(!90 cos 0.8 mul 90 sin 0.8 mul)%
+\psbezier[linewidth=1.2mm,linecolor=black!20](!330 cos 2 mul 330 sin 2 mul)(!330 cos 2 mul 60 cos 3 mul add 330 sin 2 mul 60 sin 3 mul add)(!90 cos 0.8 mul 0 cos add 90 sin 0.8 mul 0 sin add)(!90 cos 0.8 mul 90 sin 0.8 mul)%
+\psbezier[linewidth=1.6mm,linecap=0](!90 cos 0.8 mul 90 sin 0.8 mul)(!90 cos 0.8 mul 180 cos add 90 sin 0.8 mul 180 sin add)(!210 cos 2 mul 120 cos 3 mul add 210 sin 2 mul 120 sin 3 mul add)(!210 cos 2 mul 210 sin 2 mul)%
+\psbezier[linewidth=1.2mm,linecolor=black!20](!90 cos 0.8 mul 90 sin 0.8 mul)(!90 cos 0.8 mul 180 cos add 90 sin 0.8 mul 180 sin add)(!210 cos 2 mul 120 cos 3 mul add 210 sin 2 mul 120 sin 3 mul add)(!210 cos 2 mul 210 sin 2 mul)%
+}
+
+\endpspicture}

@@ -1,0 +1,13 @@
+{\psset{unit=3.0mm}\psset{linejoin=1,linewidth=0.7pt,linecap=1}
+\pspicture(-5,-5)(5,5)
+
+\pscircle[fillstyle=solid,fillcolor=black!10](0,0){5}
+
+\multido{\n=0+1}{9}{\rput{!40 \n\space mul}(0,0){%
+\pswedge[fillstyle=solid,fillcolor=black!50](0,0){4.5}{0}{36}%
+\rput(3.8;18){%
+\pscircle[linewidth=0.5pt,fillstyle=solid,fillcolor=white](0,0){0.5}%
+\multido{\n=0+72}{5}{\rput{\n}(0,0){\psellipticarc[linewidth=0.5pt](-0.25,0)(0.25,0.15){0}{180}}}%
+}}}
+
+\endpspicture}
